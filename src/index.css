@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+  --color1: #ff6f61;
+  --color2: #6b5b95;
+}
 ::-webkit-scrollbar {
   width: 6px;
   scroll-behavior: smooth;
@@ -13,3 +16,15 @@
   width: 6px;
   background-color: #fff;
 }
+
+.gradient-border {
+  border: 25px solid transparent; /* Set a transparent border first */
+  border-image-source: linear-gradient(
+    to top,
+    rgba(210, 90, 38, 1),
+    rgba(255, 255, 255, 1)
+  ); /* Apply the gradient */
+  border-image-slice: 1;
+}
+
+/* .text-stroke::first-letter */

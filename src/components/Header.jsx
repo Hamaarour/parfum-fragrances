@@ -7,7 +7,7 @@ const Header = () => {
   const location = useLocation()
 
   return (
-    <header className="absolute top-0 left-0 w-full z-10">
+    <header className="absolute top-0 left-0 w-full z-50 text-neutral">
       <nav className="container m-auto ">
         <ul className="flex justify-around items-center h-16 text-brand-teal border-b border-neutral">
           {NAV_LINKS.map((link) => (
