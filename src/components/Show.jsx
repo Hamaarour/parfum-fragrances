@@ -28,10 +28,10 @@ const Show = () => {
         <div className="absolute inset-0 bg-cover bg-center object-contain"></div>
       </div>
       <div className="p-4 text-black  flex items-left justify-evenly flex-col gap-0">
-        <h4 className="font-bold text-4xl font-sentient  uppercase">
+        <h4 className="font-bold text-4xl font-sentient leading-relaxed  uppercase">
           Best-selling <br /> must-haves
         </h4>
-        <p className="font-sentient text-gray-600 leading- relative after:content-[''] after:block after:w-2/5 after:h-px after:bg-green-500 after:mt-6">
+        <p className="font-sentient text-gray-600  relative after:content-[''] after:block after:w-2/5 after:h-px after:bg-green-500 after:mt-6">
           These fragrances evoke the rich scents of the natural world, from the
           earthy and aroma of ancient forests to the warmth of sunlit woods.
           Each composition.

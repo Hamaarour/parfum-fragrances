@@ -1,3 +1,12 @@
+// Import your brand logos
+import brand1 from '../assets/brands/armani.png'
+import brand2 from '../assets/brands/Byredo.png'
+import brand3 from '../assets/brands/chanel.png'
+import brand4 from '../assets/brands/dior.png'
+import brand5 from '../assets/brands/JoMalone.png'
+import brand6 from '../assets/brands/Prada.png'
+import brand7 from '../assets/brands/YvesSaintLaurent.png'
+
 export const NAV_LINKS = [
   { title: 'Shop', link: '/shop' },
   { title: 'Pacs', link: '/pacs' },
@@ -5,6 +14,9 @@ export const NAV_LINKS = [
   { title: 'About', link: '/about' },
   { title: 'Contact', link: '/contact' },
 ]
+
+// Array of brand logos
+export const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7]
 
 // array with 4 images
 //src:'https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Library-Sites-DiorSharedLibrary/default/dw0f71d334/images/beauty/0-HOME/WHAT-S-NEW/2024/SauvageBaccarat_2000x3000.jpg?sw=640'
