@@ -7,12 +7,12 @@ const PerfumeBrandsSlider = () => {
   const sliderSettings = {
     infinite: true,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    // slidesToScroll: 5,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 0,
     cssEase: 'linear',
-    pauseOnHover: true,
+    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 768,
@@ -31,14 +31,21 @@ const PerfumeBrandsSlider = () => {
     ],
   }
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden mb-10">
       <Slider {...sliderSettings}>
         {brands.map((brand, index) => (
-          <div key={index} className="flex justify-center items-center">
+          <div
+            key={index}
+            className="flex justify-center items-center group relative"
+          >
+            {/* Grayscale Overlay */}
+            <div className="absolute inset-0 bg-primarytwo "></div>
+
+            {/* Image */}
             <img
               src={brand}
               alt={`Brand ${index + 1}`}
-              className="h-32 w-auto object-contain mx-auto"
+              className="h-32 w-auto object-contain mx-auto relative z-10"
             />
           </div>
         ))}

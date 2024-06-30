@@ -13,9 +13,9 @@
   "dependencies": {
     "@react-three/drei": "^9.107.1",
     "@react-three/fiber": "^8.16.8",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "axios": "^1.7.2",
     "formik": "^2.4.6",
-    "framer-motion": "^11.2.11",
     "gsap": "^3.12.5",
     "postcss-cli": "^11.0.0",
     "react": "^18.3.1",

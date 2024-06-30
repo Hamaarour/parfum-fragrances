@@ -5,11 +5,10 @@ module.exports = {
     extend: {
       colors: {
         primary: '#D25A26',
-        primarytwo: '#22c55e',
+        primarytwo: '#a0c18a',
         secondary: '#5C7977',
         neutral: '#FBFBFB',
       },
-      textStroke: ['responsive'], // Add this line
       fontFamily: {
         sentient: ['Sentient', 'sans-serif'],
       },
@@ -25,17 +24,25 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {
+      filter: ['hover'],
+    },
+  },
   plugins: [
     function ({ addUtilities }) {
       const newUtilities = {
         '.text-stroke': {
-          '-webkit-text-stroke': '1.5px  rgba(34 ,197 ,94,1)', // Your text stroke style
-          'text-stroke': '1.5px  rgba(34 ,197 ,94,1)',
+          '-webkit-text-stroke': '1.5px rgba(34, 197, 94, 1)', // Your text stroke style
+          'text-stroke': '1.5px rgba(34, 197, 94, 1)',
           '-webkit-text-fill-color': 'transparent', // Optional for transparent fill
         },
       }
 
       addUtilities(newUtilities, ['responsive', 'hover']) // Add responsiveness
     },
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }
