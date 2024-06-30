@@ -7,9 +7,9 @@ import rightImage from '../assets/spreak.png'
 
 const Collections = () => {
   return (
-    <div className="w-full px-4  md:px-28 py-14 flex flex-col md:flex-row md:items-center md:justify-center gap-10">
+    <div className="w-full px-4  md:px-28 py-14 flex flex-col md:flex-row md:items-center justify-center gap-10">
       <div className="w-full md:w-1/3 flex items-center flex-col md:items-end gap-16">
-        <h1 className="font-bold text-3xl  sm:text-4xl md:text-5xl leading-loose lg:text-6xl xl:text-8xl mb-6 text-green-700 font-sentient text-center md:text-left relative">
+        <h1 className=" uppercase font-bold text-3xl  sm:text-4xl md:text-5xl leading-loose lg:text-6xl xl:text-7xl mb-6 text-green-700 font-sentient text-center md:text-left relative">
           New Perfume Collection
           <img
             src={rightImage}
