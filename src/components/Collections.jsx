@@ -9,7 +9,10 @@ const Collections = () => {
   return (
     <div className="w-full px-4  md:px-28 py-14 flex flex-col md:flex-row md:items-center justify-center gap-10">
       <div className="w-full md:w-1/3 flex items-center flex-col md:items-end gap-16">
-        <h1 className=" uppercase font-bold text-3xl  sm:text-4xl md:text-5xl leading-loose lg:text-6xl xl:text-7xl mb-6 text-green-700 font-sentient text-center md:text-left relative">
+        <h1
+          className="uppercase font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 text-green-700 font-sentient text-center md:text-left relative"
+          style={{ lineHeight: 1.3 }}
+        >
           New Perfume Collection
           <img
             src={rightImage}
@@ -72,37 +75,3 @@ const Collections = () => {
 }
 
 export default Collections
-
-// const Collections = () => {
-//   return (
-//     <div className="w-full md:px-28 py-14  h-screen flex flex-col gap-32 md:flex-row">
-//       <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-9xl mb-6 text-green-700 font-sentient">
-//         New Perfume Collection
-//       </h1>
-//       <div className="relative w-full flex flex-wrap justify-center items-center">
-//         <img
-//           src={collec}
-//           alt="Collection"
-//           className="absolute top-6 left-0 w-1/2 object-cover m-2 shadow-lg"
-//         />
-//         <img
-//           src={image1}
-//           alt="Perfume 1"
-//           className="absolute -z-20 top-0 right-12 w-2/3 h-64 object-cover m-2 shadow-lg"
-//         />
-//         <img
-//           src={image2}
-//           alt="Perfume 2"
-//           className="absolute bottom-0 left-2/2 transform -translate-x-1/2 w-1/3 h-60 object-cover m-2 shadow-lg"
-//         />
-//         <img
-//           src={image3}
-//           alt="Perfume 3"
-//           className="absolute -z-10 bottom-10 right-[-60px] w-2/3 h-1/2 object-cover m-2 shadow-lg"
-//         />
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Collections
