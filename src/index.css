@@ -17,14 +17,14 @@
   background-color: #fff;
 }
 
-.gradient-border {
-  border: 25px solid transparent; /* Set a transparent border first */
+/* .gradient-border {
+  border: 25px solid transparent; 
   border-image-source: linear-gradient(
     to top,
     rgba(210, 90, 38, 1),
     rgba(255, 255, 255, 1)
-  ); /* Apply the gradient */
+  );
   border-image-slice: 1;
-}
+} */
 
 /* .text-stroke::first-letter */
