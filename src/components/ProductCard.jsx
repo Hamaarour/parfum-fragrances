@@ -1,14 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
 const ProductCard = ({ product }) => {
-  const [selectedVolume, setSelectedVolume] = useState(null)
-  const [price, setPrice] = useState(null)
+  const [selectedVolume, setSelectedVolume] = useState('2ml') // Initialize to '2ml'
+  const [price, setPrice] = useState(product.prices['2ml']) // Initialize price for '2ml'
   const [isFavorite, setIsFavorite] = useState(false)
+
+  useEffect(() => {
+    // Update price whenever selectedVolume changes
+    if (selectedVolume) {
+      setPrice(product.prices[selectedVolume])
+    }
+  }, [selectedVolume, product.prices])
 
   const handleVolumeClick = (volume) => {
     setSelectedVolume(volume)
-    setPrice(product.prices[volume])
   }
 
   const toggleFavorite = () => {
@@ -16,12 +22,11 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="border rounded-lg p-4 relative">
-      <div className="relative">
-        <img
-          src={product.image}
-          alt={product.title}
-          className="w-full h-32 object-cover mb-2 rounded-lg"
+    <div className="border p-4 relative rounded-lg shadow-md transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
+      <div className="relative h-60 overflow-hidden ">
+        <div
+          className="absolute inset-0 bg-cover bg-center rounded-lg"
+          style={{ backgroundImage: `url(${product.image})` }}
         />
         <button
           onClick={toggleFavorite}
@@ -41,7 +46,7 @@ const ProductCard = ({ product }) => {
             key={volume}
             onClick={() => handleVolumeClick(volume)}
             className={`px-2 py-1 border rounded ${
-              selectedVolume === volume ? 'bg-gray-300' : 'bg-gray-100'
+              selectedVolume === volume ? 'bg-green-300' : 'bg-gray-100'
             }`}
           >
             {volume}
@@ -49,10 +54,10 @@ const ProductCard = ({ product }) => {
         ))}
       </div>
       <div className="flex justify-between mt-10">
-        <p className="mb-2">
-          Price: ${price ? price.toFixed(2) : 'Select volume'}
+        <p className="mb-2 font-sentient font-bold text-md">
+          {price ? price.toFixed(2) : 'Select volume'} DH
         </p>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded">
+        <button className="bg-green-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700 hover:shadow-md">
           Add to Cart
         </button>
       </div>
