@@ -50,3 +50,104 @@ export const SHOW_IMAGES = [
     text: 'This is a paragraph in div 3',
   },
 ]
+
+export const PRODUCTS = [
+  {
+    id: 1,
+    title: 'Product 1',
+    image: 'image-url-1',
+    prices: { '2ml': 5, '5ml': 10, '10ml': 15 },
+  },
+  {
+    id: 2,
+    title: 'Product 2',
+    image: 'image-url-2',
+    prices: { '2ml': 6, '5ml': 11, '10ml': 16 },
+  },
+  {
+    id: 3,
+    title: 'Product 3',
+    image: 'image-url-3',
+    prices: { '2ml': 7, '5ml': 12, '10ml': 17 },
+  },
+  {
+    id: 4,
+    title: 'Product 4',
+    image: 'image-url-4',
+    prices: { '2ml': 8, '5ml': 13, '10ml': 18 },
+  },
+  {
+    id: 5,
+    title: 'Product 5',
+    image: 'image-url-5',
+    prices: { '2ml': 9, '5ml': 14, '10ml': 19 },
+  },
+  {
+    id: 6,
+    title: 'Product 6',
+    image: 'image-url-6',
+    prices: { '2ml': 10, '5ml': 15, '10ml': 20 },
+  },
+  {
+    id: 7,
+    title: 'Product 7',
+    image: 'image-url-7',
+    prices: { '2ml': 11, '5ml': 16, '10ml': 21 },
+  },
+  {
+    id: 8,
+    title: 'Product 8',
+    image: 'image-url-8',
+    prices: { '2ml': 12, '5ml': 17, '10ml': 22 },
+  },
+  {
+    id: 9,
+    title: 'Product 9',
+    image: 'image-url-9',
+    prices: { '2ml': 13, '5ml': 18, '10ml': 23 },
+  },
+  {
+    id: 10,
+    title: 'Product 10',
+    image: 'image-url-10',
+    prices: { '2ml': 14, '5ml': 19, '10ml': 24 },
+  },
+  {
+    id: 11,
+    title: 'Product 11',
+    image: 'image-url-11',
+    prices: { '2ml': 15, '5ml': 20, '10ml': 25 },
+  },
+  {
+    id: 12,
+    title: 'Product 12',
+    image: 'image-url-12',
+    prices: { '2ml': 16, '5ml': 21, '10ml': 26 },
+  },
+  {
+    id: 13,
+    title: 'Product 13',
+    image: 'image-url-13',
+    prices: { '2ml': 17, '5ml': 22, '10ml': 27 },
+  },
+  {
+    id: 14,
+    title: 'Product 14',
+    image: 'image-url-14',
+    prices: { '2ml': 18, '5ml': 23, '10ml': 28 },
+  },
+  {
+    id: 15,
+    title: 'Product 15',
+    image: 'image-url-15',
+    prices: { '2ml': 19, '5ml': 24, '10ml': 29 },
+  },
+  {
+    id: 16,
+    title: 'Product 16',
+    image: 'image-url-16',
+    prices: { '2ml': 20, '5ml': 25, '10ml': 30 },
+  },
+]
+
+export const ITEMS_PER_PAGE = 12 // 3 rows * 4 columns
