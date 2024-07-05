@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="border p-4 relative rounded-lg shadow-md transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
-      <div className="relative h-60 overflow-hidden ">
+      <div className="relative h-60">
         <div
           className="absolute inset-0 bg-cover bg-center rounded-lg"
           style={{ backgroundImage: `url(${product.image})` }}
@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
           )}
         </button>
       </div>
-      <h2 className="text-lg font-bold mb-2">{product.title}</h2>
+      <h2 className="font-sentient text-lg font-bold mb-2">{product.title}</h2>
       <div className="flex gap-2 mb-2">
         {Object.keys(product.prices).map((volume) => (
           <button

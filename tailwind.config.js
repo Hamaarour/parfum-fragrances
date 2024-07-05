@@ -22,6 +22,9 @@ module.exports = {
         'color-gradient-2':
           'linear-gradient(to top, rgba(34 ,197 ,94,1), rgba(0,0,0,1))',
       },
+      backgroundImage: {
+        'banner-bg': "url('/src/assets/store_banner_2.png')", // Update the path to your image
+      },
     },
   },
   variants: {

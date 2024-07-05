@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import ProductCard from '../components/ProductCard'
 import { PRODUCTS, ITEMS_PER_PAGE } from '../utils/constant.js'
 import Banner from '../components/Banner'
+
 const ProductPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -22,8 +23,8 @@ const ProductPage = () => {
   return (
     <div className="bg-neutral">
       <Banner title="store" />
-      <div className="container mx-auto p-4 mt-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="mx-[100px] p-4 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -74,7 +75,7 @@ const ProductPage = () => {
                       onClick={() => setCurrentPage(idx + 1)}
                       className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${
                         currentPage === idx + 1
-                          ? 'bg-indigo-600 text-white'
+                          ? 'bg-green-500 text-white'
                           : 'text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
                       } focus:z-20 focus:outline-offset-0`}
                     >

@@ -16,7 +16,9 @@
   width: 6px;
   background-color: #fff;
 }
-
+.banner-bg {
+  @apply bg-cover bg-center;
+}
 /* .gradient-border {
   border: 25px solid transparent; 
   border-image-source: linear-gradient(

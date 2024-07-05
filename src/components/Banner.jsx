@@ -1,9 +1,9 @@
-import React from 'react'
-
 const Banner = ({ title }) => {
   return (
-    <div className="bg-green-500 text-white text-center py-4 mt-20 h-60 flex justify-center items-center">
-      <h1 className="text-8xl font-bold font-sentient uppercase">{title}</h1>
+    <div className=" bg-banner-bg bg-contain bg-no-repeat bg-fixed text-white  py-4 mt-20 h-72 flex justify-start items-center">
+      <h1 className="fixed text-6xl font-bold font-sentient uppercase ml-32">
+        {title}
+      </h1>
     </div>
   )
 }

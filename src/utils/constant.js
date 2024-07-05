@@ -63,105 +63,105 @@ export const PRODUCTS = [
     id: 2,
     title: 'Product 2',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/746aMIUyIIo6TmyifWDdV6VGrnZzjdTDuDSw0hY7_md.png',
     prices: { '2ml': 6, '5ml': 11, '10ml': 16 },
   },
   {
     id: 3,
     title: 'Product 3',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/aZeCG64jihqSBAG02vjP8f73CclzrppiDlX5TitS_md.jpeg',
     prices: { '2ml': 7, '5ml': 12, '10ml': 17 },
   },
   {
     id: 4,
     title: 'Product 4',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/Z6oAORWRDCUqlqCjk7VnOY1zfdRcQyQB1TDN8vdn.webp',
     prices: { '2ml': 8, '5ml': 13, '10ml': 18 },
   },
   {
     id: 5,
     title: 'Product 5',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/IFXoQPTHP6P4XVBlqRECz8XcUR1T59XyvrLPA75P_md.png',
     prices: { '2ml': 9, '5ml': 14, '10ml': 19 },
   },
   {
     id: 6,
     title: 'Product 6',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/us8EJTVupKSJQYDvcQ1552DCkZGAAH7eD1nddOjU_md.jpeg',
     prices: { '2ml': 10, '5ml': 15, '10ml': 20 },
   },
   {
     id: 7,
     title: 'Product 7',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/EdRtTUQNyn9T7MF6XTyA8OLUNUitsD6fDYBgdjac_md.png',
     prices: { '2ml': 11, '5ml': 16, '10ml': 21 },
   },
   {
     id: 8,
     title: 'Product 8',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/mooWKI89JK5mV5haEKKQTgT8vyZXp0jHkja3QrUN_lg.jpeg',
     prices: { '2ml': 12, '5ml': 17, '10ml': 22 },
   },
   {
     id: 9,
     title: 'Product 9',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/ZusHCIzNYZE3XdNwuy2SeVpwry0h9ohGv1A4NJpj_md.jpeg',
     prices: { '2ml': 13, '5ml': 18, '10ml': 23 },
   },
   {
     id: 10,
     title: 'Product 10',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/nJIwPJagHxxyCs3zD2L0ncINQm3DgylpIThPEkxK_md.jpeg',
     prices: { '2ml': 14, '5ml': 19, '10ml': 24 },
   },
   {
     id: 11,
     title: 'Product 11',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/zdzSzUTVA4biopokDy9h92DFeSf6I97eyyRKyvTs_md.png',
     prices: { '2ml': 15, '5ml': 20, '10ml': 25 },
   },
   {
     id: 12,
     title: 'Product 12',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/t2sVzFeNEMAmiH1LYT4MUOpkrw6j0V8dmgvsxwed.webp',
     prices: { '2ml': 16, '5ml': 21, '10ml': 26 },
   },
   {
     id: 13,
     title: 'Product 13',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/42xQ0leHo4JVuGuian7h8lvXeqPIW8zyfWWNXkdj_md.jpeg',
     prices: { '2ml': 17, '5ml': 22, '10ml': 27 },
   },
   {
     id: 14,
     title: 'Product 14',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/XnV93RGyq4InQTjx3X10ZyxFvlCl1WAgcdINirx9_md.png',
     prices: { '2ml': 18, '5ml': 23, '10ml': 28 },
   },
   {
     id: 15,
     title: 'Product 15',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/9L6049goASIBqTeTSQExMksHqUieIE8dmHzlXIJB_md.jpeg',
     prices: { '2ml': 19, '5ml': 24, '10ml': 29 },
   },
   {
     id: 16,
     title: 'Product 16',
     image:
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/E9ZGwuHoYGoxvS3uKrWhmbxUprRIMmdnxUL9koas_md.jpeg',
     prices: { '2ml': 20, '5ml': 25, '10ml': 30 },
   },
 ]
