@@ -16,22 +16,25 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="border rounded-lg p-4">
-      <img
-        src={product.image}
-        alt={product.title}
-        className="w-full h-32 object-cover mb-2"
-      />
-      <div className="flex justify-between items-center mb-2">
-        <h2 className="text-lg font-bold">{product.title}</h2>
-        <button onClick={toggleFavorite}>
+    <div className="border rounded-lg p-4 relative">
+      <div className="relative">
+        <img
+          src={product.image}
+          alt={product.title}
+          className="w-full h-32 object-cover mb-2 rounded-lg"
+        />
+        <button
+          onClick={toggleFavorite}
+          className="absolute top-2 right-2 text-2xl transition-transform duration-300 ease-in-out transform hover:scale-110 focus:outline-none"
+        >
           {isFavorite ? (
-            <AiFillHeart className="text-red-500" />
+            <AiFillHeart className="text-red-500 animate-ping-once" />
           ) : (
-            <AiOutlineHeart />
+            <AiOutlineHeart className="text-gray-500" />
           )}
         </button>
       </div>
+      <h2 className="text-lg font-bold mb-2">{product.title}</h2>
       <div className="flex gap-2 mb-2">
         {Object.keys(product.prices).map((volume) => (
           <button
@@ -45,12 +48,14 @@ const ProductCard = ({ product }) => {
           </button>
         ))}
       </div>
-      <p className="mb-2">
-        Price: ${price ? price.toFixed(2) : 'Select volume'}
-      </p>
-      <button className="bg-blue-500 text-white px-4 py-2 rounded">
-        Add to Cart
-      </button>
+      <div className="flex justify-between mt-10">
+        <p className="mb-2">
+          Price: ${price ? price.toFixed(2) : 'Select volume'}
+        </p>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded">
+          Add to Cart
+        </button>
+      </div>
     </div>
   )
 }
