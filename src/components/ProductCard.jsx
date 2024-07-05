@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
 const ProductCard = ({ product }) => {
@@ -21,9 +21,14 @@ const ProductCard = ({ product }) => {
     setIsFavorite(!isFavorite)
   }
 
+  const handleDoubleClick = () => {
+    // Add logic to toggle favorite status on double click
+    setIsFavorite(!isFavorite)
+  }
+
   return (
     <div className="border p-4 relative rounded-lg shadow-md transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
-      <div className="relative h-60">
+      <div className="relative h-60" onDoubleClick={handleDoubleClick}>
         <div
           className="absolute inset-0 bg-cover bg-center rounded-lg"
           style={{ backgroundImage: `url(${product.image})` }}

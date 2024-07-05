@@ -15,7 +15,6 @@ const Home = () => {
       <Services />
       <Collections />
       <PerfumeBrandsSlider />
-      <Footer />
     </div>
   )
 }
