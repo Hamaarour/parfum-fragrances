@@ -1,11 +1,14 @@
+// ProductPage.js
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa'
 import React, { useState } from 'react'
 import ProductCard from '../components/ProductCard'
 import { PRODUCTS, ITEMS_PER_PAGE } from '../utils/constant.js'
 import Banner from '../components/Banner'
+import SearchBar from '../components/SearchBar'
 
 const ProductPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
+  const [filteredProducts, setFilteredProducts] = useState(PRODUCTS)
 
   const handlePrevPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))
@@ -13,17 +16,29 @@ const ProductPage = () => {
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) =>
-      Math.min(prevPage + 1, Math.ceil(PRODUCTS.length / ITEMS_PER_PAGE))
+      Math.min(
+        prevPage + 1,
+        Math.ceil(filteredProducts.length / ITEMS_PER_PAGE)
+      )
     )
   }
 
+  const handleProductSelect = (product) => {
+    // Implement product selection logic, e.g., navigate to the product detail page
+    console.log('Selected product:', product)
+  }
+
   const startIdx = (currentPage - 1) * ITEMS_PER_PAGE
-  const currentProducts = PRODUCTS.slice(startIdx, startIdx + ITEMS_PER_PAGE)
+  const currentProducts = filteredProducts.slice(
+    startIdx,
+    startIdx + ITEMS_PER_PAGE
+  )
 
   return (
     <div className="bg-neutral">
       <Banner title="store" backgroundImage="/src/assets/store_banner_2.png" />
       <div className="mx-[100px] p-4 mt-4">
+        {/* <SearchBar products={PRODUCTS} onProductSelect={handleProductSelect} /> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -49,9 +64,10 @@ const ProductPage = () => {
               <p className="text-sm text-gray-700">
                 Showing <span className="font-medium">{startIdx + 1}</span> to{' '}
                 <span className="font-medium">
-                  {Math.min(startIdx + ITEMS_PER_PAGE, PRODUCTS.length)}
+                  {Math.min(startIdx + ITEMS_PER_PAGE, filteredProducts.length)}
                 </span>{' '}
-                of <span className="font-medium">{PRODUCTS.length}</span>{' '}
+                of{' '}
+                <span className="font-medium">{filteredProducts.length}</span>{' '}
                 results
               </p>
             </div>
@@ -68,7 +84,9 @@ const ProductPage = () => {
                   <FaChevronLeft className="h-5 w-5" aria-hidden="true" />
                 </button>
                 {Array.from(
-                  { length: Math.ceil(PRODUCTS.length / ITEMS_PER_PAGE) },
+                  {
+                    length: Math.ceil(filteredProducts.length / ITEMS_PER_PAGE),
+                  },
                   (_, idx) => (
                     <button
                       key={idx + 1}

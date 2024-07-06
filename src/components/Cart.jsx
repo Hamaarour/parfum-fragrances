@@ -30,21 +30,22 @@ const Cart = ({ isOpen, toggleCart }) => {
   }
 
   const calculateTotal = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    )
+    return cartItems
+      .reduce((total, item) => total + item.price * item.quantity, 0)
+      .toFixed(2)
   }
 
   return (
     <div
       ref={cartRef}
-      className={`fixed right-0 top-0 h-full w-80 bg-white shadow-lg z-50 p-4 overflow-y-auto ${
+      className={`fixed right-0 top-0 h-full w-80 bg-white shadow-lg z-50 p-4 overflow-y-auto  ${
         isOpen ? '' : 'hidden'
       }`}
     >
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-bold text-black">Shopping Cart</h2>
+      <div className="flex justify-between items-center mb-4 ">
+        <h2 className="text-lg font-sentient font-bold text-green-500 uppercase">
+          Shopping Cart
+        </h2>
         <FaTimes
           onClick={() => toggleCart(false)}
           className="text-red-500 text-xl cursor-pointer"
@@ -89,11 +90,8 @@ const Cart = ({ isOpen, toggleCart }) => {
           </div>
         </div>
       ))}
-      <div className="flex justify-between items-center mt-4 text-black font-sentient font-bold">
-        <p className="text-lg font-semibold">Total:</p>
-        <p className="text-lg font-semibold">
-          {calculateTotal().toFixed(2)} DH
-        </p>
+      <div className="text-black text-lg font-bold mb-4">
+        Total: {calculateTotal()} DH
       </div>
       <button className="bg-green-500 text-black px-4 py-2 rounded w-full mt-4">
         Checkout

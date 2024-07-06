@@ -25,6 +25,12 @@ const Header = () => {
     setIsFavoriteOpen(open)
   }
 
+  const calculateTotal = () => {
+    return cartItems
+      .reduce((total, item) => total + item.price * item.quantity, 0)
+      .toFixed(2)
+  }
+
   return (
     <header className="absolute top-0 left-0 w-full z-50 text-neutral bg-color-gradient font-sentient">
       <nav className="container mx-auto flex justify-between items-center h-16">
@@ -60,13 +66,13 @@ const Header = () => {
             </li>
           ))}
         </ul>
-        <div className="flex items-center space-x-4">
-          <FaSearch className="text-xl cursor-pointer" />
-          <div className="relative">
-            <FaShoppingCart
-              className="text-xl cursor-pointer"
-              onClick={() => toggleCart(!isCartOpen)}
-            />
+        <div className="flex items-center space-x-4 ">
+          <div
+            className="relative flex items-center border-2 border-white rounded-sm p-2 cursor-pointer"
+            onClick={() => toggleCart(!isCartOpen)}
+          >
+            <FaShoppingCart className="text-xl cursor-pointer" />
+            <span className="ml-2">{calculateTotal()} DH</span>
             {/* Display cart items count */}
             {cartItems.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-black rounded-full px-2 text-xs">
@@ -80,6 +86,7 @@ const Header = () => {
             <FaHeart
               className="text-xl cursor-pointer"
               onClick={() => toggleFavorite(!isFavoriteOpen)}
+              size={27}
             />
             {/* Display favorites count */}
             {favorites.length > 0 && (

@@ -49,7 +49,9 @@ const Favorites = ({ isOpen, toggleFavorite }) => {
       }`}
     >
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-bold text-black">Favorites</h2>
+        <h2 className="text-lg font-sentient font-bold text-green-500 uppercase">
+          Favorites
+        </h2>
         <FaTimes
           onClick={() => toggleFavorite(false)}
           className="text-red-500 text-xl cursor-pointer"
