@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import { useShoppingCart } from '../contexts/ShoppingCartContext'
 
 const ProductCard = ({ product }) => {
@@ -47,16 +45,6 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = () => {
     addToCart(product, selectedVolume, purchaseQuantity)
-    console.log('Product added to cart:', product.title)
-    toast.success(`${product.title} added to cart!`, {
-      position: 'top-right',
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    })
   }
 
   return (
@@ -82,42 +70,42 @@ const ProductCard = ({ product }) => {
           </div>
         )}
       </div>
-      <h2 className="font-sentient text-lg font-bold mb-2">{product.title}</h2>
-      <div className="flex gap-2 mb-2">
-        {Object.keys(product.prices).map((volume) => (
+      <h3 className="text-lg font-semibold mt-4">{product.title}</h3>
+      <p className="text-gray-500 mt-2">{product.description}</p>
+      <div className="flex justify-between items-center mt-4">
+        <div>
+          <span className="text-xl font-bold">{price.toFixed(2)} DH</span>
+        </div>
+        <div>
+          <label className="mr-2">Quantity:</label>
+          <input
+            type="number"
+            value={purchaseQuantity}
+            onChange={handlePurchaseQuantityChange}
+            min="1"
+            max={quantities[selectedVolume]}
+            className="w-16 p-1 border rounded text-center"
+          />
+        </div>
+      </div>
+      <div className="flex justify-between mt-4">
+        {['2ml', '5ml', '10ml'].map((volume) => (
           <button
             key={volume}
             onClick={() => handleVolumeClick(volume)}
-            className={`px-2 py-1 border rounded ${
-              quantities[volume] === 0
-                ? 'bg-red-300 cursor-not-allowed'
-                : selectedVolume === volume
-                ? 'bg-green-300'
-                : 'bg-gray-100'
+            className={`px-3 py-1 rounded ${
+              selectedVolume === volume
+                ? 'bg-blue-500 text-white'
+                : 'bg-gray-200 text-gray-700'
             }`}
-            disabled={quantities[volume] === 0}
           >
-            {volume} ({quantities[volume]})
+            {volume}
           </button>
         ))}
       </div>
-      <div className="flex justify-between items-center mb-2">
-        <p className="font-sentient font-bold text-md">
-          {price ? price.toFixed(2) : 'Select volume'} DH
-        </p>
-        <input
-          type="number"
-          value={purchaseQuantity}
-          onChange={handlePurchaseQuantityChange}
-          min="1"
-          max={quantities[selectedVolume]}
-          className="w-16 p-1 border rounded text-center"
-        />
-      </div>
       <button
-        className="bg-green-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700 hover:shadow-md w-full"
-        disabled={quantities[selectedVolume] === 0}
         onClick={handleAddToCart}
+        className="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out"
       >
         Add to Cart
       </button>
