@@ -17,7 +17,7 @@ module.exports = {
           'radial-gradient(circle, rgba(34 ,197 ,94,0.6) 0%, rgba(0,0,0,1) 100%)',
         'color-gradient-2':
           'linear-gradient(to top, rgba(34 ,197 ,94,1), rgba(0,0,0,1))',
-        'banner-bg': "url('/src/assets/store_banner_2.png')",
+        // 'banner-bg': "url('/src/assets/store_banner_2.png')",
       },
       borderColor: {
         'color-gradient-2':

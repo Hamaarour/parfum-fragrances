@@ -26,7 +26,7 @@ const Header = () => {
   }
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 text-neutral bg-color-gradient">
+    <header className="absolute top-0 left-0 w-full z-50 text-neutral bg-color-gradient font-sentient">
       <nav className="container mx-auto flex justify-between items-center h-16">
         <div className="flex items-center">
           <FaBars className="text-xl mr-4 cursor-pointer" />
@@ -43,13 +43,13 @@ const Header = () => {
                   to={link.link}
                   className={`${
                     location.pathname === link.link
-                      ? 'text-brand-orange border-b-2 border-brand-orange'
-                      : 'text-brand-teal hover:text-brand-orange transition duration-300 ease-in-out'
+                      ? 'text-black border-b-2 border-black font-bold'
+                      : 'text-brand-teal hover:text-black transition duration-300 ease-in-out'
                   } relative pb-1`}
                 >
                   {link.title}
                   <span
-                    className={`absolute left-0 bottom-0 w-full h-0.5 bg-brand-orange transition-all duration-300 ease-in-out ${
+                    className={`absolute left-0 bottom-0 w-full h-0.5 bg-black transition-all duration-300 ease-in-out ${
                       location.pathname === link.link
                         ? 'scale-x-100'
                         : 'scale-x-0'

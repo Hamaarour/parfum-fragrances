@@ -133,7 +133,7 @@ const ProductCard = ({ product }) => {
             onChange={handlePurchaseQuantityChange}
             min="1"
             max={quantities[selectedVolume]}
-            className="w-16 p-1 border rounded text-center"
+            className="w-16 p-1 border rounded text-center text-black focus:outline-none focus:ring-0 "
           />
         )}
       </div>

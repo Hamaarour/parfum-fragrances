@@ -12,6 +12,7 @@ import { ShoppingCartProvider } from './contexts/ShoppingCartContext'
 import { FavoriteProvider } from './contexts/FavoriteContext'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import PacPage from './pages/PacPage'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/shop" element={<ProductPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/pacs" element={<PacPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

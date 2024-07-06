@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Contact = () => {
-  return <div className=" text-red-700">Contact</div>
+  return <div className=" bg-gray-200 w-full h-[100vh]">Contact</div>
 }
 
 export default Contact

@@ -22,7 +22,7 @@ const ProductPage = () => {
 
   return (
     <div className="bg-neutral">
-      <Banner title="store" />
+      <Banner title="store" backgroundImage="/src/assets/store_banner_2.png" />
       <div className="mx-[100px] p-4 mt-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentProducts.map((product) => (
