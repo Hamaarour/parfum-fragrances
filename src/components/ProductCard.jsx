@@ -1,20 +1,22 @@
+// ProductCard.jsx
 import React, { useState, useEffect } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useShoppingCart } from '../contexts/ShoppingCartContext'
+import { useFavorite } from '../contexts/FavoriteContext'
 
 const ProductCard = ({ product }) => {
   const [selectedVolume, setSelectedVolume] = useState('2ml')
   const [price, setPrice] = useState(product.prices['2ml'])
-  const [isFavorite, setIsFavorite] = useState(false)
+  const { addToCart } = useShoppingCart()
+  const { addToFavorite, removeFromFavorite, isFavorite } = useFavorite()
   const [quantities, setQuantities] = useState({
     '2ml': product.quantities['2ml'],
     '5ml': product.quantities['5ml'],
     '10ml': product.quantities['10ml'],
   })
   const [purchaseQuantity, setPurchaseQuantity] = useState(1)
-  const { addToCart } = useShoppingCart()
 
   useEffect(() => {
     if (selectedVolume) {
@@ -29,14 +31,6 @@ const ProductCard = ({ product }) => {
     }
   }
 
-  const toggleFavorite = () => {
-    setIsFavorite(!isFavorite)
-  }
-
-  const handleDoubleClick = () => {
-    setIsFavorite(!isFavorite)
-  }
-
   const handlePurchaseQuantityChange = (e) => {
     const value = Math.max(
       1,
@@ -47,7 +41,6 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = () => {
     addToCart(product, selectedVolume, purchaseQuantity)
-    console.log('Product added to cart:', product.title)
     toast.success(`${product.title} added to cart!`, {
       position: 'top-right',
       autoClose: 3000,
@@ -59,25 +52,51 @@ const ProductCard = ({ product }) => {
     })
   }
 
+  const handleToggleFavorite = () => {
+    if (isFavorite(product.id)) {
+      removeFromFavorite(product.id)
+      toast.success(`${product.title} removed from favorites!`, {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    } else {
+      addToFavorite(product)
+      toast.success(`${product.title} added to favorites!`, {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    }
+  }
+
   return (
     <div className="border p-4 relative rounded-lg shadow-md transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
-      <div className="relative h-60" onDoubleClick={handleDoubleClick}>
+      <div className="relative h-60" onDoubleClick={handleToggleFavorite}>
         <div
           className="absolute inset-0 bg-cover bg-center rounded-lg"
           style={{ backgroundImage: `url(${product.image})` }}
         />
         <button
-          onClick={toggleFavorite}
+          onClick={handleToggleFavorite}
           className="absolute top-2 right-2 text-2xl transition-transform duration-300 ease-in-out transform hover:scale-110 focus:outline-none"
         >
-          {isFavorite ? (
+          {isFavorite(product.id) ? (
             <AiFillHeart className="text-red-500 animate-ping-once" />
           ) : (
             <AiOutlineHeart className="text-gray-500" />
           )}
         </button>
         {quantities[selectedVolume] === 0 && (
-          <div className="absolute top-0 left-0 w-full h-full bg-red-600 bg-opacity-75 flex justify-center items-center text-white text-2xl font-bold">
+          <div className="absolute top-0 left-0 w-full h-full bg-gray-400 bg-opacity-75 flex justify-center items-center text-white text-2xl font-bold">
             Stock Out
           </div>
         )}
@@ -90,7 +109,7 @@ const ProductCard = ({ product }) => {
             onClick={() => handleVolumeClick(volume)}
             className={`px-2 py-1 border rounded ${
               quantities[volume] === 0
-                ? 'bg-red-300 cursor-not-allowed'
+                ? 'bg-gray-300 cursor-not-allowed'
                 : selectedVolume === volume
                 ? 'bg-green-300'
                 : 'bg-gray-100'
@@ -105,14 +124,18 @@ const ProductCard = ({ product }) => {
         <p className="font-sentient font-bold text-md">
           {price ? price.toFixed(2) : 'Select volume'} DH
         </p>
-        <input
-          type="number"
-          value={purchaseQuantity}
-          onChange={handlePurchaseQuantityChange}
-          min="1"
-          max={quantities[selectedVolume]}
-          className="w-16 p-1 border rounded text-center"
-        />
+        {(quantities[selectedVolume] === 0 && (
+          <p className="text-red-500 text-sm">Out of stock</p>
+        )) || (
+          <input
+            type="number"
+            value={purchaseQuantity}
+            onChange={handlePurchaseQuantityChange}
+            min="1"
+            max={quantities[selectedVolume]}
+            className="w-16 p-1 border rounded text-center"
+          />
+        )}
       </div>
       <button
         className="bg-green-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700 hover:shadow-md w-full"

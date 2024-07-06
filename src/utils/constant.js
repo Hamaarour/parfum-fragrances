@@ -58,7 +58,7 @@ export const PRODUCTS = [
     image:
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
     prices: { '2ml': 5, '5ml': 10, '10ml': 15 },
-    quantities: { '2ml': 1, '5ml': 0, '10ml': 0 },
+    quantities: { '2ml': 0, '5ml': 0, '10ml': 0 },
   },
   {
     id: 2,
@@ -66,7 +66,7 @@ export const PRODUCTS = [
     image:
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/746aMIUyIIo6TmyifWDdV6VGrnZzjdTDuDSw0hY7_md.png',
     prices: { '2ml': 6, '5ml': 11, '10ml': 16 },
-    quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
+    quantities: { '2ml': 0, '5ml': 0, '10ml': 0 },
   },
   {
     id: 3,
