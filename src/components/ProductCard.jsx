@@ -118,7 +118,9 @@ const ProductCard = ({ product }) => {
           </div>
         )}
       </div>
-      <h2 className="font-sentient text-lg font-bold mb-2">{product.title}</h2>
+      <h2 className="font-sentient text-md font-bold mb-4 mt-4 min-h-10">
+        {product.title}
+      </h2>
       <div className="flex gap-2 mb-2">
         {Object.keys(product.prices).map((volume) => (
           <button
@@ -128,7 +130,7 @@ const ProductCard = ({ product }) => {
               quantities[volume] === 0
                 ? 'bg-gray-300 cursor-not-allowed'
                 : selectedVolume === volume
-                ? 'bg-green-300'
+                ? 'bg-green-500'
                 : 'bg-gray-100'
             }`}
             disabled={quantities[volume] === 0}
@@ -137,10 +139,7 @@ const ProductCard = ({ product }) => {
           </button>
         ))}
       </div>
-      <div className="flex justify-between items-center mb-2">
-        <p className="font-sentient font-bold text-md">
-          {price ? price.toFixed(2) : 'Select volume'} DH
-        </p>
+      <div className="flex justify-end items-end mb-2">
         {quantities[selectedVolume] === 0 ? (
           <p className="text-red-500 text-sm">Out of stock</p>
         ) : (
@@ -154,13 +153,18 @@ const ProductCard = ({ product }) => {
           />
         )}
       </div>
-      <button
-        className="bg-green-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700 hover:shadow-md w-full"
-        disabled={quantities[selectedVolume] === 0}
-        onClick={handleAddToCart}
-      >
-        Add to Cart
-      </button>
+      <div className="flex justify-between items-center">
+        <p className="font-sentient font-bold text-md w-1/3">
+          {price ? price.toFixed(2) : 'Select volume'} DH
+        </p>
+        <button
+          className="bg-green-500 text-white w-1/2 px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700 hover:shadow-md "
+          disabled={quantities[selectedVolume] === 0}
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </button>
+      </div>
     </div>
   )
 }
