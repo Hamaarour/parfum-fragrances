@@ -4,14 +4,24 @@ import Slider from 'react-slick'
 import { PRODUCTS } from '../utils/constant.js'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { useShoppingCart } from '../contexts/ShoppingCartContext'
+import { useNavigate } from 'react-router-dom'
 
 const ProductDetail = () => {
   const { productId } = useParams()
   const product = PRODUCTS.find((p) => p.id === parseInt(productId))
   const [selectedVolume, setSelectedVolume] = useState('2ml')
   const [price, setPrice] = useState(product.prices[selectedVolume])
+  const [quantities, setQuantities] = useState({
+    '2ml': product.quantities['2ml'],
+    '5ml': product.quantities['5ml'],
+    '10ml': product.quantities['10ml'],
+  })
   const [purchaseQuantity, setPurchaseQuantity] = useState(1)
-  const [mainImage, setMainImage] = useState(product.images[0]) // State to track main image
+  const [mainImage, setMainImage] = useState(product.images[0])
+  const { addToCart } = useShoppingCart()
 
   if (!product) return <div>Product not found</div>
 
@@ -57,10 +67,25 @@ const ProductDetail = () => {
     )
   }
 
+  const handleAddToCart = () => {
+    addToCart(product, selectedVolume, purchaseQuantity)
+    setPurchaseQuantity(1)
+    toast.success(`${product.title} added to cart!`, {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    })
+  }
+
   // Function to handle click on smaller images
   const handleImageClick = (image) => {
     setMainImage(image)
   }
+  const navigate = useNavigate()
 
   return (
     <div className="container mx-auto p-4 mt-20">
@@ -118,19 +143,23 @@ const ProductDetail = () => {
             <button
               onClick={() => setPurchaseQuantity(purchaseQuantity - 1)}
               disabled={purchaseQuantity <= 1}
-              className="px-4 py-2 border rounded bg-gray-200"
+              className="px-4 py-2 border rounded bg-gray-200 hover:bg-green-500 cursor-pointer"
             >
               -
             </button>
             <span>{purchaseQuantity}</span>
             <button
               onClick={() => setPurchaseQuantity(purchaseQuantity + 1)}
-              className="px-4 py-2 border rounded bg-gray-200"
+              className="px-4 py-2 border rounded bg-gray-200 hover:bg-green-500 cursor-pointer"
             >
               +
             </button>
           </div>
-          <button className="w-full bg-green-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700">
+          <button
+            className="w-full bg-green-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700"
+            disabled={quantities[selectedVolume] === 0}
+            onClick={handleAddToCart}
+          >
             ADD TO CART
           </button>
           <div className="mt-8">
@@ -139,7 +168,31 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      {/* Section for related products can be added here if needed */}
+      {/* Section for related products  */}
+      <div className="flex flex-col justify-between">
+        <div className="flex items-center justify-between border-t border-gray-600 bg-white px-4 py-3 sm:px-6 mt-4">
+          <h4 className=" uppercase text-lg font-sentient font-bold">
+            related products
+          </h4>
+          {/* link to see parfums */}
+
+          <button
+            className="-block text-green-500 font-sentient font-bold text-sm  uppercase relative group"
+            onClick={() => {
+              navigate('/shop')
+            }}
+          >
+            voir plus
+            <span className="block w-2/3 h-px bg-green-500 absolute left-0 top-9 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+          </button>
+        </div>
+
+        <div className="flex justify-between h-450  p-4">
+          <div className="box flex-1 bg-gray-400 h-[400px] m-2">Box 1</div>
+          <div className="box flex-1 bg-gray-400 h-[400px] m-2">Box 2</div>
+          <div className="box flex-1 bg-gray-400 h-[400px] m-2">Box 3</div>
+        </div>
+      </div>
     </div>
   )
 }

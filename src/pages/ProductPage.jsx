@@ -13,6 +13,7 @@ const ProductPage = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [filteredProducts, setFilteredProducts] = useState(PRODUCTS)
   const [isModalOpen, setIsModalOpen] = useState(false)
+
   const navigate = useNavigate()
 
   const handleSearchChange = (event) => {

@@ -1,6 +1,6 @@
 // Header.js
 import React, { useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { NAV_LINKS } from '../utils/constant'
 import logo from '../assets/react.svg'
 import { FaBars, FaSearch, FaShoppingCart, FaHeart } from 'react-icons/fa'
