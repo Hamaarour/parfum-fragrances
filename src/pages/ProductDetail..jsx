@@ -11,6 +11,7 @@ const ProductDetail = () => {
   const [selectedVolume, setSelectedVolume] = useState('2ml')
   const [price, setPrice] = useState(product.prices[selectedVolume])
   const [purchaseQuantity, setPurchaseQuantity] = useState(1)
+  const [mainImage, setMainImage] = useState(product.images[0]) // State to track main image
 
   if (!product) return <div>Product not found</div>
 
@@ -20,24 +21,58 @@ const ProductDetail = () => {
   }
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  }
+
+  // Custom arrow components for slick slider
+  function NextArrow(props) {
+    const { className, style, onClick } = props
+    return (
+      <div
+        className={`${className} w-10 h-10 absolute top-1/2 right-4 z-10 bg-gray-400 text-black rounded-full p-2 cursor-pointer`}
+        style={{ ...style }}
+        onClick={onClick}
+      >
+        {'>'}
+      </div>
+    )
+  }
+
+  function PrevArrow(props) {
+    const { className, style, onClick } = props
+    return (
+      <div
+        className={`${className} w-10 h-10 absolute top-1/2 left-4 z-10 bg-gray-400 text-black rounded-full p-2 cursor-pointer`}
+        style={{ ...style }}
+        onClick={onClick}
+      >
+        {'<'}
+      </div>
+    )
+  }
+
+  // Function to handle click on smaller images
+  const handleImageClick = (image) => {
+    setMainImage(image)
   }
 
   return (
     <div className="container mx-auto p-4 mt-20">
-      <div className="flex flex-col md:flex-row md:items-start gap-2   pt-10">
-        <div className="w-full md:w-1/2">
+      <div className="flex flex-col md:flex-row md:items-start gap-2 pt-10">
+        <div className="w-full md:w-1/2 relative">
           <Slider {...settings}>
             {product.images.map((image, index) => (
               <div key={index}>
                 <img
                   src={image}
                   alt={product.title}
-                  className="w-2/3 h-2/3 object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             ))}
@@ -48,7 +83,10 @@ const ProductDetail = () => {
                 key={index}
                 src={image}
                 alt={product.title}
-                className="w-16 h-16 object-cover cursor-pointer"
+                className={`w-16 h-16 object-cover cursor-pointer border ${
+                  mainImage === image ? 'border-green-500' : 'border-gray-300'
+                }`}
+                onClick={() => handleImageClick(image)} // Update main image on click
               />
             ))}
           </div>

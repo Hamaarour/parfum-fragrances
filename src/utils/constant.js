@@ -212,7 +212,7 @@ export const PRODUCTS = [
     images: [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/t2sVzFeNEMAmiH1LYT4MUOpkrw6j0V8dmgvsxwed.webp',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/t2sVzFeNEMAmiH1LYT4MUOpkrw6j0V8dmgvsxwed.webp',
-      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/t2sVzFeNEMAmiH1LYT4MUOpkrw6j0V8dmgvsxwed.webp',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/zdzSzUTVA4biopokDy9h92DFeSf6I97eyyRKyvTs_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/t2sVzFeNEMAmiH1LYT4MUOpkrw6j0V8dmgvsxwed.webp',
     ],
     description:

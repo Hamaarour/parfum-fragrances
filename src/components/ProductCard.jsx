@@ -80,14 +80,14 @@ const ProductCard = ({ product }) => {
   }
 
   const handleProductClick = () => {
-    navigate(`/product/${product.id}`) // Navigate to product detail route
+    navigate(`/product/${product.id}`)
   }
 
   return (
     <div className="border p-4 relative rounded-lg shadow-md transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
       <div
         className="relative h-60 cursor-pointer"
-        onClick={handleProductClick}
+        // onClick={handleProductClick}
         onDoubleClick={handleToggleFavorite}
       >
         <div
