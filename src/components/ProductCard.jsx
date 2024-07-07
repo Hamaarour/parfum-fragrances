@@ -1,6 +1,6 @@
-// ProductCard.jsx
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useShoppingCart } from '../contexts/ShoppingCartContext'
@@ -17,6 +17,7 @@ const ProductCard = ({ product }) => {
     '10ml': product.quantities['10ml'],
   })
   const [purchaseQuantity, setPurchaseQuantity] = useState(1)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (selectedVolume) {
@@ -78,13 +79,29 @@ const ProductCard = ({ product }) => {
     }
   }
 
+  const handleProductClick = () => {
+    navigate(`/product/${product.id}`) // Navigate to product detail route
+  }
+
   return (
     <div className="border p-4 relative rounded-lg shadow-md transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
-      <div className="relative h-60" onDoubleClick={handleToggleFavorite}>
+      <div
+        className="relative h-60 cursor-pointer"
+        onClick={handleProductClick}
+        onDoubleClick={handleToggleFavorite}
+      >
         <div
           className="absolute inset-0 bg-cover bg-center rounded-lg"
-          style={{ backgroundImage: `url(${product.image})` }}
+          style={{ backgroundImage: `url(${product.images[0]})` }}
         />
+        <div className="absolute inset-0 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+          <button
+            onClick={handleProductClick}
+            className="bg-white bg-opacity-75 text-black text-lg font-bold py-2 px-4 rounded-lg focus:outline-none hover:bg-opacity-100"
+          >
+            Show Product
+          </button>
+        </div>
         <button
           onClick={handleToggleFavorite}
           className="absolute top-2 right-2 text-2xl transition-transform duration-300 ease-in-out transform hover:scale-110 focus:outline-none"
@@ -124,16 +141,16 @@ const ProductCard = ({ product }) => {
         <p className="font-sentient font-bold text-md">
           {price ? price.toFixed(2) : 'Select volume'} DH
         </p>
-        {(quantities[selectedVolume] === 0 && (
+        {quantities[selectedVolume] === 0 ? (
           <p className="text-red-500 text-sm">Out of stock</p>
-        )) || (
+        ) : (
           <input
             type="number"
             value={purchaseQuantity}
             onChange={handlePurchaseQuantityChange}
             min="1"
             max={quantities[selectedVolume]}
-            className="w-16 p-1 border rounded text-center text-black focus:outline-none focus:ring-0 "
+            className="w-16 p-1 border rounded text-center text-black focus:outline-none focus:ring-0"
           />
         )}
       </div>

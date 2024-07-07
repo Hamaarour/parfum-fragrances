@@ -63,7 +63,7 @@ const Favorites = ({ isOpen, toggleFavorite }) => {
         favorites.map((product) => (
           <div key={product.id} className="flex items-center mb-4 p-2 border-b">
             <img
-              src={product.image}
+              src={product.images[0]}
               alt={product.title}
               className="w-12 h-12 object-cover rounded mr-2"
             />

@@ -1,14 +1,31 @@
-// ProductPage.js
+import { useState } from 'react'
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa'
-import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { PRODUCTS, ITEMS_PER_PAGE } from '../utils/constant.js'
 import Banner from '../components/Banner'
 import SearchBar from '../components/SearchBar'
+import Modal from '../components/Modal'
 
 const ProductPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
+  const [searchQuery, setSearchQuery] = useState('')
   const [filteredProducts, setFilteredProducts] = useState(PRODUCTS)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const navigate = useNavigate()
+
+  const handleSearchChange = (event) => {
+    const query = event.target.value
+    setSearchQuery(query)
+    const results = PRODUCTS.filter((product) =>
+      product.title.toLowerCase().includes(query.toLowerCase())
+    )
+    setFilteredProducts(results)
+    //   setIsModalOpen(true)
+  }
+  const handleProductSelect = (product) => {
+    navigate(`/product/${product.id}`)
+  }
 
   const handlePrevPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))
@@ -23,11 +40,6 @@ const ProductPage = () => {
     )
   }
 
-  const handleProductSelect = (product) => {
-    // Implement product selection logic, e.g., navigate to the product detail page
-    console.log('Selected product:', product)
-  }
-
   const startIdx = (currentPage - 1) * ITEMS_PER_PAGE
   const currentProducts = filteredProducts.slice(
     startIdx,
@@ -37,9 +49,27 @@ const ProductPage = () => {
   return (
     <div className="bg-neutral">
       <Banner title="store" backgroundImage="/src/assets/store_banner_2.png" />
-      <div className="mx-[100px] p-4 mt-4">
-        {/* <SearchBar products={PRODUCTS} onProductSelect={handleProductSelect} /> */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mx-[100px] p-4 mt-4 l">
+        <SearchBar value={searchQuery} onChange={handleSearchChange} />
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProducts.map((product) => (
+              <div
+                key={product.id}
+                className="cursor-pointer"
+                onClick={() => handleProductSelect(product)}
+              >
+                <img
+                  src={product.images[0]}
+                  alt={product.name}
+                  className="w-32 h-32"
+                />
+                <p>{product.name}</p>
+              </div>
+            ))}
+          </div>
+        </Modal>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
           {currentProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

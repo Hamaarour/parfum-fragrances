@@ -57,7 +57,7 @@ const Cart = ({ isOpen, toggleCart }) => {
           className="flex items-center justify-between mb-4 p-2 border-b"
         >
           <img
-            src={item.image}
+            src={item.images[0]}
             alt={item.title}
             className="w-32 object-cover rounded"
           />
