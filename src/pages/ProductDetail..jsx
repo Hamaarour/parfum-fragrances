@@ -67,7 +67,7 @@ const ProductDetail = () => {
                   onClick={() => handleVolumeClick(volume)}
                   className={`px-4 py-2 border rounded ${
                     selectedVolume === volume
-                      ? 'bg-blue-500 text-white'
+                      ? 'bg-green-500 text-white'
                       : 'bg-gray-200'
                   }`}
                 >
@@ -92,8 +92,8 @@ const ProductDetail = () => {
               +
             </button>
           </div>
-          <button className="w-full bg-blue-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-blue-700">
-            ACHETER MAINTENANT!
+          <button className="w-full bg-green-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700">
+            ADD TO CART
           </button>
           <div className="mt-8">
             <h2 className="text-xl font-bold mb-4">Description du produit</h2>

@@ -61,9 +61,10 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/5BHL6OB4zQspmztPZ5P7c05GhuFyrJ5WxSIOM3Gs_lg.jpeg',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 5, '5ml': 10, '10ml': 15 },
-    quantities: { '2ml': 0, '5ml': 0, '10ml': 0 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 50, '5ml': 100, '10ml': 150 },
+    quantities: { '2ml': 10, '5ml': 10, '10ml': 10 },
   },
   {
     id: 2,
@@ -74,8 +75,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/746aMIUyIIo6TmyifWDdV6VGrnZzjdTDuDSw0hY7_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/746aMIUyIIo6TmyifWDdV6VGrnZzjdTDuDSw0hY7_md.png',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 6, '5ml': 11, '10ml': 16 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 60, '5ml': 110, '10ml': 160 },
     quantities: { '2ml': 0, '5ml': 0, '10ml': 0 },
   },
   {
@@ -87,8 +89,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/aZeCG64jihqSBAG02vjP8f73CclzrppiDlX5TitS_md.jpeg',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/aZeCG64jihqSBAG02vjP8f73CclzrppiDlX5TitS_md.jpeg',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 7, '5ml': 12, '10ml': 17 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 70, '5ml': 120, '10ml': 170 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -100,8 +103,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/6oZQy09cRnuLApDWhoCnFpHw0sNOiCA8A5rBa7Cj_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/6oZQy09cRnuLApDWhoCnFpHw0sNOiCA8A5rBa7Cj_md.png',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 8, '5ml': 13, '10ml': 18 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 80, '5ml': 130, '10ml': 180 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -113,8 +117,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/IFXoQPTHP6P4XVBlqRECz8XcUR1T59XyvrLPA75P_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/IFXoQPTHP6P4XVBlqRECz8XcUR1T59XyvrLPA75P_md.png',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 9, '5ml': 14, '10ml': 19 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 90, '5ml': 140, '10ml': 190 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -126,8 +131,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/us8EJTVupKSJQYDvcQ1552DCkZGAAH7eD1nddOjU_md.jpeg',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/us8EJTVupKSJQYDvcQ1552DCkZGAAH7eD1nddOjU_md.jpeg',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 10, '5ml': 15, '10ml': 20 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 100, '5ml': 150, '10ml': 200 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -139,8 +145,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/EdRtTUQNyn9T7MF6XTyA8OLUNUitsD6fDYBgdjac_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/EdRtTUQNyn9T7MF6XTyA8OLUNUitsD6fDYBgdjac_md.png',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 11, '5ml': 16, '10ml': 21 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 110, '5ml': 160, '10ml': 210 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -152,8 +159,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/mooWKI89JK5mV5haEKKQTgT8vyZXp0jHkja3QrUN_lg.jpeg',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/mooWKI89JK5mV5haEKKQTgT8vyZXp0jHkja3QrUN_lg.jpeg',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 12, '5ml': 17, '10ml': 22 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 120, '5ml': 170, '10ml': 220 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -165,8 +173,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/ZusHCIzNYZE3XdNwuy2SeVpwry0h9ohGv1A4NJpj_md.jpeg',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/ZusHCIzNYZE3XdNwuy2SeVpwry0h9ohGv1A4NJpj_md.jpeg',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 13, '5ml': 18, '10ml': 23 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 130, '5ml': 180, '10ml': 230 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -178,8 +187,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/nJIwPJagHxxyCs3zD2L0ncINQm3DgylpIThPEkxK_md.jpeg',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/nJIwPJagHxxyCs3zD2L0ncINQm3DgylpIThPEkxK_md.jpeg',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 14, '5ml': 19, '10ml': 24 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 140, '5ml': 190, '10ml': 240 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -191,8 +201,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/zdzSzUTVA4biopokDy9h92DFeSf6I97eyyRKyvTs_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/zdzSzUTVA4biopokDy9h92DFeSf6I97eyyRKyvTs_md.png',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 15, '5ml': 20, '10ml': 25 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 150, '5ml': 200, '10ml': 250 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -204,8 +215,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/t2sVzFeNEMAmiH1LYT4MUOpkrw6j0V8dmgvsxwed.webp',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/t2sVzFeNEMAmiH1LYT4MUOpkrw6j0V8dmgvsxwed.webp',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 16, '5ml': 21, '10ml': 26 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 160, '5ml': 210, '10ml': 260 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -217,8 +229,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/42xQ0leHo4JVuGuian7h8lvXeqPIW8zyfWWNXkdj_md.jpeg',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/42xQ0leHo4JVuGuian7h8lvXeqPIW8zyfWWNXkdj_md.jpeg',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 17, '5ml': 22, '10ml': 27 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 170, '5ml': 220, '10ml': 270 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -230,8 +243,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/XnV93RGyq4InQTjx3X10ZyxFvlCl1WAgcdINirx9_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/XnV93RGyq4InQTjx3X10ZyxFvlCl1WAgcdINirx9_md.png',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 18, '5ml': 23, '10ml': 28 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 180, '5ml': 230, '10ml': 280 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -243,8 +257,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/9L6049goASIBqTeTSQExMksHqUieIE8dmHzlXIJB_md.jpeg',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/9L6049goASIBqTeTSQExMksHqUieIE8dmHzlXIJB_md.jpeg',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 19, '5ml': 24, '10ml': 29 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 190, '5ml': 240, '10ml': 290 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
   {
@@ -255,8 +270,9 @@ export const PRODUCTS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/E9ZGwuHoYGoxvS3uKrWhmbxUprRIMmdnxUL9koas_md.jpeg',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/E9ZGwuHoYGoxvS3uKrWhmbxUprRIMmdnxUL9koas_md.jpeg',
     ],
-    description: ' this is a description of the product ',
-    prices: { '2ml': 20, '5ml': 25, '10ml': 30 },
+    description:
+      'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
+    prices: { '2ml': 200, '5ml': 250, '10ml': 30 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
   },
 ]
