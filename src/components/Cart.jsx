@@ -1,13 +1,15 @@
 // Cart.js
 import React, { useRef, useEffect } from 'react'
-import { FaTimes, FaShoppingCart } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 import { useShoppingCart } from '../contexts/ShoppingCartContext'
 import { gsap } from 'gsap'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = ({ isOpen, toggleCart }) => {
   const cartRef = useRef(null)
   const { cartItems, removeFromCart, updateCartItemQuantity } =
     useShoppingCart()
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (isOpen && cartRef.current) {
@@ -35,10 +37,15 @@ const Cart = ({ isOpen, toggleCart }) => {
       .toFixed(2)
   }
 
+  const handleCheckout = () => {
+    toggleCart(false)
+    navigate('/checkout', { state: { cartItems, total: calculateTotal() } })
+  }
+
   return (
     <div
       ref={cartRef}
-      className={`fixed right-0 top-0 h-full w-80 bg-white shadow-lg z-50 p-4 overflow-y-auto  ${
+      className={`fixed right-0 top-0 h-full w-80 bg-white shadow-lg z-50 p-4 overflow-y-auto ${
         isOpen ? '' : 'hidden'
       }`}
     >
@@ -93,7 +100,10 @@ const Cart = ({ isOpen, toggleCart }) => {
       <div className="text-black text-lg font-bold mb-4">
         Total: {calculateTotal()} DH
       </div>
-      <button className="bg-green-500 text-black px-4 py-2 rounded w-full mt-4">
+      <button
+        className="bg-green-500 text-black px-4 py-2 rounded w-full mt-4"
+        onClick={handleCheckout}
+      >
         Checkout
       </button>
     </div>

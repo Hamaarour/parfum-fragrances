@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { PRODUCTS, ITEMS_PER_PAGE } from '../utils/constant.js'
 import Banner from '../components/Banner'
 import SearchBar from '../components/SearchBar'
 import Modal from '../components/Modal'
-import Pagination from '../components/Pagination' // Import the Pagination component
+import Pagination from '../components/Pagination'
 import ResultsSummary from '../components/ResultsSummary.jsx'
+import FilterDropdown from '../components/FilterDropdown' // Import the FilterDropdown component
 
 const ProductPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -22,6 +23,18 @@ const ProductPage = () => {
     const results = PRODUCTS.filter((product) =>
       product.title.toLowerCase().includes(query.toLowerCase())
     )
+    setFilteredProducts(results)
+  }
+
+  const handleFilterChange = (filter) => {
+    let results
+    if (filter === 'men') {
+      results = PRODUCTS.filter((product) => product.category === 'men')
+    } else if (filter === 'women') {
+      results = PRODUCTS.filter((product) => product.category === 'women')
+    } else {
+      results = PRODUCTS
+    }
     setFilteredProducts(results)
   }
 
@@ -42,32 +55,42 @@ const ProductPage = () => {
   return (
     <div className="bg-neutral">
       <Banner title="store" backgroundImage="/src/assets/store_banner_2.png" />
-      <div className="mx-[100px] p-4 mt-4 l">
-        <SearchBar value={searchQuery} onChange={handleSearchChange} />
+      <div className="mx-[100px] p-4 mt-4">
+        <div className="flex items-center justify-between mb-4">
+          <SearchBar value={searchQuery} onChange={handleSearchChange} />
+          <FilterDropdown onFilterChange={handleFilterChange} />
+        </div>
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="cursor-pointer"
-                onClick={() => handleProductSelect(product)}
-              >
-                <img
-                  src={product.images[0]}
-                  alt={product.name}
-                  className="w-32 h-32"
-                />
-                <p>{product.name}</p>
-              </div>
-            ))}
-          </div>
+          {filteredProducts.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredProducts.map((product) => (
+                <div
+                  key={product.id}
+                  className="cursor-pointer bg-gray-400 m-2 p-4"
+                  onClick={() => handleProductSelect(product)}
+                >
+                  <img
+                    src={product.images[0]}
+                    alt={product.name}
+                    className="w-32 h-32"
+                  />
+                  <p>{product.name}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-black text-md mt-20">No products found</p>
+          )}
         </Modal>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-          {currentProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          {currentProducts.length > 0 ? (
+            currentProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          ) : (
+            <p className="text-black text-md mt-20">No products found</p>
+          )}
         </div>
-        {/* Pagination */}
         <div className="flex items-center justify-between border-t border-gray-600 bg-white px-4 py-3 sm:px-6 mt-4">
           <ResultsSummary
             startIdx={startIdx}

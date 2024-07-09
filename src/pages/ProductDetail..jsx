@@ -183,7 +183,7 @@ const ProductDetail = () => {
             }}
           >
             voir plus
-            <span className="block w-2/3 h-px bg-green-500 absolute left-0 top-9 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+            <span className="block w-2/3 h-px bg-green-700 absolute left-0 top-9 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
           </button>
         </div>
 
