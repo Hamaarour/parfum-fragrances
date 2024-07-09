@@ -1,21 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
+import ProductCardSkeleton from '../staticUI/ProductCardSkeleton'
 import { PRODUCTS, ITEMS_PER_PAGE } from '../utils/constant.js'
 import Banner from '../components/Banner'
 import SearchBar from '../components/SearchBar'
 import Modal from '../components/Modal'
 import Pagination from '../components/Pagination'
 import ResultsSummary from '../components/ResultsSummary.jsx'
-import FilterDropdown from '../components/FilterDropdown' // Import the FilterDropdown component
+import FilterDropdown from '../components/FilterDropdown'
 
 const ProductPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [searchQuery, setSearchQuery] = useState('')
-  const [filteredProducts, setFilteredProducts] = useState(PRODUCTS)
+  const [filteredProducts, setFilteredProducts] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    // Simulate a network request
+    setTimeout(() => {
+      setFilteredProducts(PRODUCTS)
+      setIsLoading(false)
+    }, 2000) // Simulate a 2 second delay
+  }, [])
 
   const handleSearchChange = (event) => {
     const query = event.target.value
@@ -29,9 +39,9 @@ const ProductPage = () => {
   const handleFilterChange = (filter) => {
     let results
     if (filter === 'men') {
-      results = PRODUCTS.filter((product) => product.category === 'men')
+      results = PRODUCTS.filter((product) => product.category === 'Men')
     } else if (filter === 'women') {
-      results = PRODUCTS.filter((product) => product.category === 'women')
+      results = PRODUCTS.filter((product) => product.category === 'Women')
     } else {
       results = PRODUCTS
     }
@@ -61,7 +71,13 @@ const ProductPage = () => {
           <FilterDropdown onFilterChange={handleFilterChange} />
         </div>
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          {filteredProducts.length > 0 ? (
+          {isLoading ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
+                <ProductCardSkeleton key={index} />
+              ))}
+            </div>
+          ) : filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProducts.map((product) => (
                 <div
@@ -83,7 +99,11 @@ const ProductPage = () => {
           )}
         </Modal>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-          {currentProducts.length > 0 ? (
+          {isLoading ? (
+            Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
+              <ProductCardSkeleton key={index} />
+            ))
+          ) : currentProducts.length > 0 ? (
             currentProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))
