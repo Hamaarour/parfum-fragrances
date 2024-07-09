@@ -24,7 +24,7 @@ const ProductPage = () => {
     setTimeout(() => {
       setFilteredProducts(PRODUCTS)
       setIsLoading(false)
-    }, 2000) // Simulate a 2 second delay
+    }, 1000)
   }, [])
 
   const handleSearchChange = (event) => {
@@ -39,9 +39,9 @@ const ProductPage = () => {
   const handleFilterChange = (filter) => {
     let results
     if (filter === 'men') {
-      results = PRODUCTS.filter((product) => product.category === 'Men')
+      results = PRODUCTS.filter((product) => product.category === 'men')
     } else if (filter === 'women') {
-      results = PRODUCTS.filter((product) => product.category === 'Women')
+      results = PRODUCTS.filter((product) => product.category === 'women')
     } else {
       results = PRODUCTS
     }

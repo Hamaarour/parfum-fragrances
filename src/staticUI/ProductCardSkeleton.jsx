@@ -13,7 +13,7 @@ const ProductCardSkeleton = () => {
       </div>
       <div className="flex justify-between items-center">
         <div className="font-sentient font-bold text-md w-1/3 bg-gray-200 h-6 rounded animate-pulse"></div>
-        <div className="bg-green-500 text-white w-1/2 px-4 py-2 rounded bg-gray-200 h-8 animate-pulse"></div>
+        <div className="bg-green-500 text-white w-1/2 px-4 py-2 rounded h-8 animate-pulse"></div>
       </div>
     </div>
   )
