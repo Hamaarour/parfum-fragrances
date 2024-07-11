@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { COLLECTIONS } from '../utils/constant'
 import ItemNotFound from '../components/ItemNotFound'
-import { Magnifier } from 'react-zoom-pan-pinch' // Adjust the import to match the correct export name
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
 
 const CollectionDetail = () => {
   const { collectionId } = useParams()
@@ -13,15 +13,13 @@ const CollectionDetail = () => {
   return (
     <div className="container mx-auto mt-8">
       <div className="flex flex-wrap items-center justify-center">
-        <div className="w-full md:w-1/2 relative">
-          <Magnifier
-            imageSrc={collection.image[0]}
-            className="image-magnifier"
-            zoomFactor={2}
-            mgWidth={200}
-            mgHeight={200}
-          />
-        </div>
+        <TransformWrapper>
+          <div className="w-full md:w-1/2 relative">
+            <TransformComponent>
+              <img src={collection.image[0]} alt="test" width="100%" />
+            </TransformComponent>
+          </div>
+        </TransformWrapper>
         <div className="w-full md:w-1/2 md:pl-8">
           <h1 className="text-4xl font-bold text-gray-800">
             {collection.name}
