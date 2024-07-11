@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { FaStar } from 'react-icons/fa'
 
@@ -85,6 +85,13 @@ const ProductCard = ({ product }) => {
     navigate(`/product/${product.id}`)
   }
 
+  const isNewProduct = () => {
+    const creationDate = new Date(product.dateOfCreation)
+    const today = new Date()
+    const diffInDays = Math.ceil((today - creationDate) / (1000 * 60 * 60 * 24))
+    return diffInDays <= 7
+  }
+
   return (
     <div className="border p-4 relative rounded-lg shadow-md transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
       <div
@@ -121,9 +128,14 @@ const ProductCard = ({ product }) => {
             </div>
           </>
         )}
+        {isNewProduct() && quantities[selectedVolume] !== 0 && (
+          <div className="absolute top-2 left-2 bg-yellow-500 flex gap-1 items-center text-white text-xs font-bold px-2 py-1 rounded">
+            New!
+          </div>
+        )}
         {product.bestSelling && quantities[selectedVolume] !== 0 && (
-          <div className="absolute top-2 left-2 bg-yellow-500 flex   gap-[2px] text-white text-xs font-bold px-2 py-1 rounded">
-            <FaStar />
+          <div className="absolute top-2 left-2 bg-green-500 flex gap-1 items-center text-white text-xs font-bold px-2 py-1 rounded">
+            {/* <FaStar className="text-yellow-500" /> */}
             Best Selling
           </div>
         )}
@@ -164,8 +176,8 @@ const ProductCard = ({ product }) => {
         )}
       </div>
       <div className="flex justify-between items-center">
-        <p className="font-sentient font-bold text-md w-1/3">
-          {price ? price.toFixed(2) : 'Select volume'} DH
+        <p className="font-bold text-md w-1/3">
+          Price: {price ? price.toFixed(2) : 'Select volume'} DH
         </p>
         <button
           className={` text-white w-1/2 px-4 py-2 rounded transition duration-300 ease-in-out hover:shadow-md  ${

@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-center md:text-left w-full md:w-2/3 flex flex-col items-center md:items-center gap-2">
-          <h1 className="text-5xl md:text-8xl font-bold">JESMINA</h1>
+          <h1 className="text-5xl md:text-8xl font-bold">JASMIN</h1>
           <div className="flex justify-center md:justify-start items-center space-x-4">
             <FaTiktok
               size={20}
@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
       <div className="flex justify-center bg-black items-center md:mt-10 md:bg-green-500">
         <p className="text-center">
-          Copyright {year}© <span className="font-bold">JESMINA</span>. All
+          Copyright {year}© <span className="font-bold">JASMIN</span>. All
           rights reserved.
         </p>
       </div>

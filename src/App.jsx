@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import PacPage from './pages/PacPage'
 import ProductDetail from './pages/ProductDetail.'
 import OrderConfirmation from './pages/OrderConfirmation'
+import CollectionDetail from './pages/CollectionDetail'
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <FavoriteProvider>
         <Router>
           <Header />
-          <ToastContainer position="top-right" autoClose={3000} />
+          <ToastContainer position="top-right" autoClose={2000} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<ProductPage />} />
@@ -30,7 +31,11 @@ function App() {
             <Route path="/checkout" element={<OrderConfirmation />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/pacs" element={<PacPage />} />
+            <Route
+              path="/collection/:collectionId"
+              element={<CollectionDetail />}
+            />
+            <Route path="/collection" element={<PacPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

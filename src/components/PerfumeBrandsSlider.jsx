@@ -39,7 +39,7 @@ const PerfumeBrandsSlider = () => {
             className="flex justify-center items-center group relative"
           >
             {/* Grayscale Overlay */}
-            <div className="absolute inset-0 bg-primarytwo "></div>
+            <div className="absolute inset-0 "></div>
 
             {/* Image */}
             <img

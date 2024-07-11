@@ -8,10 +8,12 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useShoppingCart } from '../contexts/ShoppingCartContext'
 import { useNavigate } from 'react-router-dom'
+import ItemNotFound from '../components/ItemNotFound.jsx'
 
 const ProductDetail = () => {
   const { productId } = useParams()
   const product = PRODUCTS.find((p) => p.id === parseInt(productId))
+  if (!product) return <ItemNotFound item="Product" />
   const [selectedVolume, setSelectedVolume] = useState('2ml')
   const [price, setPrice] = useState(product.prices[selectedVolume])
   const [quantities, setQuantities] = useState({
@@ -22,8 +24,6 @@ const ProductDetail = () => {
   const [purchaseQuantity, setPurchaseQuantity] = useState(1)
   const [mainImage, setMainImage] = useState(product.images[0])
   const { addToCart } = useShoppingCart()
-
-  if (!product) return <div>Product not found</div>
 
   const handleVolumeClick = (volume) => {
     setSelectedVolume(volume)

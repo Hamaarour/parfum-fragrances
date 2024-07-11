@@ -17,7 +17,7 @@ const Show = () => {
           perfume
         </p>
         <p className=" font-bold text-8xl uppercase z-20 font-sentient tracking-wider ">
-          <span className="text-stroke">j</span>esmina
+          <span className="text-stroke">j</span>ASMIN
         </p>
       </div>
       <div

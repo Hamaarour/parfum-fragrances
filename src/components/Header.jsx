@@ -1,14 +1,14 @@
-// Header.js
 import React, { useState } from 'react'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { NAV_LINKS } from '../utils/constant'
 import logo from '../assets/react.svg'
-import { FaBars, FaSearch, FaShoppingCart, FaHeart } from 'react-icons/fa'
+import { FaBars, FaShoppingCart, FaHeart } from 'react-icons/fa'
 import Cart from './Cart'
 import Favorites from './Favorites'
 import { useShoppingCart } from '../contexts/ShoppingCartContext'
 import { useFavorite } from '../contexts/FavoriteContext'
 import Toast from './Toast'
+import TopBanner from './TopBanner'
 
 const Header = () => {
   const location = useLocation()
@@ -32,7 +32,8 @@ const Header = () => {
   }
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 text-neutral bg-color-gradient font-sentient">
+    <header className="relative top-0 left-0 w-full z-50 text-neutral bg-color-gradient font-sentient">
+      <TopBanner />
       <nav className="container mx-auto flex justify-between items-center h-16">
         <div className="flex items-center">
           <FaBars className="text-xl mr-4 cursor-pointer" />
@@ -73,13 +74,11 @@ const Header = () => {
           >
             <FaShoppingCart className="text-xl cursor-pointer" />
             <span className="ml-2">{calculateTotal()} DH</span>
-            {/* Display cart items count */}
             {cartItems.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-black rounded-full px-2 text-xs">
                 {cartItems.length}
               </span>
             )}
-            {/* Display cart items */}
             {isCartOpen && <Cart isOpen={isCartOpen} toggleCart={toggleCart} />}
           </div>
           <div className="relative">
@@ -88,13 +87,11 @@ const Header = () => {
               onClick={() => toggleFavorite(!isFavoriteOpen)}
               size={27}
             />
-            {/* Display favorites count */}
             {favorites.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-black rounded-full px-2 text-xs">
                 {favorites.length}
               </span>
             )}
-            {/* Display favorites */}
             {isFavoriteOpen && (
               <Favorites
                 isOpen={isFavoriteOpen}

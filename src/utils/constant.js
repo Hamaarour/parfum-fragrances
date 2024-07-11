@@ -9,7 +9,7 @@ import brand7 from '../assets/brands/YvesSaintLaurent.png'
 
 export const NAV_LINKS = [
   { title: 'Shop', link: '/shop' },
-  { title: 'Pacs', link: '/pacs' },
+  { title: 'Collection', link: '/collection' },
   { logo: true, src: '../assets/react.svg', alt: 'Logo', link: '/' },
   { title: 'About', link: '/about' },
   { title: 'Contact', link: '/contact' },
@@ -29,7 +29,7 @@ export const SHOW_IMAGES = [
   },
   {
     id: 1,
-    text: ['perfume', 'jesmina'],
+    text: ['perfume', 'JASMIN'],
   },
   {
     id: 2,
@@ -64,9 +64,10 @@ export const PRODUCTS = [
     description:
       'This captivating fragrance is a delightful exploration of contrasts. It opens with a burst of sparkling citrus notes that invigorate the senses. The heart unfolds with a luxurious bouquet of fresh florals, creating a romantic and feminine aura. As the fragrance dries down, a warm embrace of amber and musk lingers, leaving a lasting impression of sophistication. This versatile perfume is perfect for daytime wear or special occasions, leaving you feeling confident and empowered',
     prices: { '2ml': 50, '5ml': 100, '10ml': 150 },
-    quantities: { '2ml': 10, '5ml': 10, '10ml': 10 },
+    quantities: { '2ml': 0, '5ml': 10, '10ml': 10 },
     category: 'men',
     bestSelling: true,
+    dateOfCreation: '2024-07-11',
   },
   {
     id: 2,
@@ -83,6 +84,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 0, '5ml': 0, '10ml': 0 },
     category: 'women',
     bestSelling: true,
+    dateOfCreation: '2024-07-11',
   },
   {
     id: 3,
@@ -99,6 +101,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: false,
+    dateOfCreation: '2024-07-11',
   },
   {
     id: 4,
@@ -115,6 +118,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'women',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 5,
@@ -131,6 +135,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: false,
+    dateOfCreation: '2024-07-11',
   },
   {
     id: 6,
@@ -147,6 +152,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 7,
@@ -163,6 +169,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 8,
@@ -179,6 +186,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'women',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 9,
@@ -195,6 +203,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 10,
@@ -211,6 +220,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'women',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 11,
@@ -227,6 +237,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 12,
@@ -243,6 +254,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: true,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 13,
@@ -259,6 +271,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: true,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 14,
@@ -275,6 +288,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 15,
@@ -291,6 +305,7 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
   {
     id: 16,
@@ -306,7 +321,83 @@ export const PRODUCTS = [
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'women',
     bestSelling: false,
+    dateOfCreation: '2023-07-11',
   },
 ]
 
 export const ITEMS_PER_PAGE = 12 // 3 rows * 4 columns
+
+export const COLLECTIONS = [
+  {
+    id: 1,
+    name: 'Jean Paul Gaultier Pack Trio',
+    price: 439,
+    image: [
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/KQrvA3G4KTvF2r41i9l8UQ2L5YWJ40RkFKbhRhMO_md.png',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
+    ],
+  },
+  {
+    id: 2,
+    name: 'Jean Paul Gaultier "Le Beau" Duo Pack',
+    price: 295,
+    image: [
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/sTHA17E4PRzYao6VUnn7sw3agffAbIbK6lZClyRU_md.png',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
+    ],
+  },
+  {
+    id: 3,
+    name: "JParfums d'été Niche Duo Pack",
+    price: 445,
+    image: [
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/iRM1PHwZCvJkSEh8ZZ0NLgt9FRMIhOUg44dJusIl_lg.png',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
+    ],
+  },
+  {
+    id: 4,
+    name: "Parfums d'été Niche Trio Pack",
+    price: 695,
+    image: [
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/Q5iNWyReEZV2CbiQtoaFN367Jkz1EjXy6LRL8DYg_lg.png',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
+    ],
+  },
+  {
+    id: 5,
+    name: "Parfums d'été Niche Trio Pack II",
+    price: 1049,
+    image: [
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/EJUf45HAWXofpB3o4fxPwaxueqdoxLAwpPnCq3lG_lg.png',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
+    ],
+  },
+  {
+    id: 6,
+    name: 'Héritage Aromatique Pack Trio',
+    price: 1035,
+    image: [
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/w22VgPPOr1JSYNkCTGUbaAeOEXgKBqnunPBizGr0_lg.png',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
+    ],
+  },
+  {
+    id: 7,
+    name: 'Stronger With You Decantes Pack',
+    price: 295,
+    image: [
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/AGk9cOHO2g2ao6cEkefaGnldnYbF06CnHL2tkfy6_md.png',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
+    ],
+  },
+  {
+    id: 8,
+    name: 'Valentino Uomo "Born in Roma" Decantes Pack',
+    price: 280,
+    image: [
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/8xih57dOvotYolHCCkUpuerJkbKtz4EDYvmsFAgK_md.png',
+      'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
+    ],
+  },
+]
