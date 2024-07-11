@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
+import { FaStar } from 'react-icons/fa'
+
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -86,8 +88,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="border p-4 relative rounded-lg shadow-md transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
       <div
-        className="relative h-60 cursor-pointer"
-        // onClick={handleProductClick}
+        className="relative h-64 cursor-pointer lg:h-72 xl:h-80 2xl:h-96 rounded-lg overflow-hidden"
         onDoubleClick={handleToggleFavorite}
       >
         <div
@@ -113,8 +114,17 @@ const ProductCard = ({ product }) => {
           )}
         </button>
         {quantities[selectedVolume] === 0 && (
-          <div className="absolute top-0 left-0 w-full h-full bg-gray-400 bg-opacity-75 flex justify-center items-center text-white text-2xl font-bold">
-            Stock Out
+          <>
+            <div className="absolute top-0 left-0 w-full h-full bg-gray-400 bg-opacity-75 flex justify-center items-center text-white text-2xl font-bold"></div>
+            <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+              Out of Stock
+            </div>
+          </>
+        )}
+        {product.bestSelling && quantities[selectedVolume] !== 0 && (
+          <div className="absolute top-2 left-2 bg-yellow-500 flex   gap-[2px] text-white text-xs font-bold px-2 py-1 rounded">
+            <FaStar />
+            Best Selling
           </div>
         )}
       </div>
@@ -158,7 +168,11 @@ const ProductCard = ({ product }) => {
           {price ? price.toFixed(2) : 'Select volume'} DH
         </p>
         <button
-          className="bg-green-500 text-white w-1/2 px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700 hover:shadow-md "
+          className={` text-white w-1/2 px-4 py-2 rounded transition duration-300 ease-in-out hover:shadow-md  ${
+            quantities[selectedVolume] === 0
+              ? 'bg-gray-500 hover:bg-gray-700 cursor-not-allowed'
+              : 'bg-green-500 hover:bg-green-700 '
+          }`}
           disabled={quantities[selectedVolume] === 0}
           onClick={handleAddToCart}
         >

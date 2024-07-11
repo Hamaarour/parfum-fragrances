@@ -66,6 +66,7 @@ export const PRODUCTS = [
     prices: { '2ml': 50, '5ml': 100, '10ml': 150 },
     quantities: { '2ml': 10, '5ml': 10, '10ml': 10 },
     category: 'men',
+    bestSelling: true,
   },
   {
     id: 2,
@@ -81,6 +82,7 @@ export const PRODUCTS = [
     prices: { '2ml': 60, '5ml': 110, '10ml': 160 },
     quantities: { '2ml': 0, '5ml': 0, '10ml': 0 },
     category: 'women',
+    bestSelling: true,
   },
   {
     id: 3,
@@ -96,6 +98,7 @@ export const PRODUCTS = [
     prices: { '2ml': 70, '5ml': 120, '10ml': 170 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: false,
   },
   {
     id: 4,
@@ -111,6 +114,7 @@ export const PRODUCTS = [
     prices: { '2ml': 80, '5ml': 130, '10ml': 180 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'women',
+    bestSelling: false,
   },
   {
     id: 5,
@@ -126,6 +130,7 @@ export const PRODUCTS = [
     prices: { '2ml': 90, '5ml': 140, '10ml': 190 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: false,
   },
   {
     id: 6,
@@ -141,6 +146,7 @@ export const PRODUCTS = [
     prices: { '2ml': 100, '5ml': 150, '10ml': 200 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: false,
   },
   {
     id: 7,
@@ -156,6 +162,7 @@ export const PRODUCTS = [
     prices: { '2ml': 110, '5ml': 160, '10ml': 210 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: false,
   },
   {
     id: 8,
@@ -171,6 +178,7 @@ export const PRODUCTS = [
     prices: { '2ml': 120, '5ml': 170, '10ml': 220 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'women',
+    bestSelling: false,
   },
   {
     id: 9,
@@ -186,6 +194,7 @@ export const PRODUCTS = [
     prices: { '2ml': 130, '5ml': 180, '10ml': 230 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: false,
   },
   {
     id: 10,
@@ -201,6 +210,7 @@ export const PRODUCTS = [
     prices: { '2ml': 140, '5ml': 190, '10ml': 240 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'women',
+    bestSelling: false,
   },
   {
     id: 11,
@@ -216,6 +226,7 @@ export const PRODUCTS = [
     prices: { '2ml': 150, '5ml': 200, '10ml': 250 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: false,
   },
   {
     id: 12,
@@ -231,6 +242,7 @@ export const PRODUCTS = [
     prices: { '2ml': 160, '5ml': 210, '10ml': 260 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: true,
   },
   {
     id: 13,
@@ -246,6 +258,7 @@ export const PRODUCTS = [
     prices: { '2ml': 170, '5ml': 220, '10ml': 270 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: true,
   },
   {
     id: 14,
@@ -261,6 +274,7 @@ export const PRODUCTS = [
     prices: { '2ml': 180, '5ml': 230, '10ml': 280 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: false,
   },
   {
     id: 15,
@@ -276,6 +290,7 @@ export const PRODUCTS = [
     prices: { '2ml': 190, '5ml': 240, '10ml': 290 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'men',
+    bestSelling: false,
   },
   {
     id: 16,
@@ -290,6 +305,7 @@ export const PRODUCTS = [
     prices: { '2ml': 200, '5ml': 250, '10ml': 30 },
     quantities: { '2ml': 10, '5ml': 5, '10ml': 2 },
     category: 'women',
+    bestSelling: false,
   },
 ]
 

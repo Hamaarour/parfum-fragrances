@@ -45,7 +45,7 @@ const ProductDetail = () => {
     const { className, style, onClick } = props
     return (
       <div
-        className={`${className} w-10 h-10 absolute top-1/2 right-4 z-10 bg-gray-400 text-black rounded-full p-2 cursor-pointer`}
+        className={`${className} w-10 h-10 absolute top-1/2 right-4 transform -translate-y-1/2 z-10 bg-gray-400 text-black rounded-full p-2 cursor-pointer hover:bg-gray-600`}
         style={{ ...style }}
         onClick={onClick}
       >
@@ -58,11 +58,11 @@ const ProductDetail = () => {
     const { className, style, onClick } = props
     return (
       <div
-        className={`${className} w-10 h-10 absolute top-1/2 left-4 z-10 bg-gray-400 text-black rounded-full p-2 cursor-pointer`}
+        className={`${className} w-10 h-10 absolute top-1/2 left-4 z-10 bg-gray-400 text-black rounded-full p-2 cursor-pointer hover:bg-gray-600`}
         style={{ ...style }}
         onClick={onClick}
       >
-        {'<'}
+        <span>{'<'}</span>
       </div>
     )
   }
@@ -86,6 +86,22 @@ const ProductDetail = () => {
     setMainImage(image)
   }
   const navigate = useNavigate()
+
+  const getRandomProducts = (category, count) => {
+    const filteredProducts = PRODUCTS.filter((p) => p.category === category)
+    const randomProducts = []
+    while (randomProducts.length < count && filteredProducts.length > 0) {
+      const randomIndex = Math.floor(Math.random() * filteredProducts.length)
+      randomProducts.push(filteredProducts.splice(randomIndex, 1)[0])
+    }
+    return randomProducts
+  }
+
+  // Fetch three random related products based on the current product's category
+  const relatedProducts =
+    product.category === 'men'
+      ? getRandomProducts('men', 4)
+      : getRandomProducts('women', 4)
 
   return (
     <div className="container mx-auto p-4 mt-20">
@@ -111,7 +127,7 @@ const ProductDetail = () => {
                 className={`w-16 h-16 object-cover cursor-pointer border ${
                   mainImage === image ? 'border-green-500' : 'border-gray-300'
                 }`}
-                onClick={() => handleImageClick(image)} // Update main image on click
+                onClick={() => handleImageClick(image)}
               />
             ))}
           </div>
@@ -121,8 +137,8 @@ const ProductDetail = () => {
           <p className="text-2xl font-semibold text-red-600 mb-4">
             {price.toFixed(2)} DH
           </p>
-          <div className="mb-4">
-            <span className="font-semibold">Quantité:</span>
+          <div className="mb-8 flex flex-col gap-2">
+            <span className="font-semibold ">Quantité:</span>
             <div className="flex items-center gap-2">
               {Object.keys(product.prices).map((volume) => (
                 <button
@@ -156,14 +172,16 @@ const ProductDetail = () => {
             </button>
           </div>
           <button
-            className="w-full bg-green-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700"
+            className="w-full bg-green-500 mt-6 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-green-700"
             disabled={quantities[selectedVolume] === 0}
             onClick={handleAddToCart}
           >
             ADD TO CART
           </button>
           <div className="mt-8">
-            <h2 className="text-xl font-bold mb-4">Description du produit</h2>
+            <h2 className="text-xl font-bold mb-4 uppercase">
+              Description du produit
+            </h2>
             <p className="mb-4">{product.description}</p>
           </div>
         </div>
@@ -187,10 +205,30 @@ const ProductDetail = () => {
           </button>
         </div>
 
-        <div className="flex justify-between h-450  p-4">
-          <div className="box flex-1 bg-gray-400 h-[400px] m-2">Box 1</div>
-          <div className="box flex-1 bg-gray-400 h-[400px] m-2">Box 2</div>
-          <div className="box flex-1 bg-gray-400 h-[400px] m-2">Box 3</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+          {relatedProducts.map((relatedProduct) => (
+            <div
+              key={relatedProduct.id}
+              className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col  transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105"
+            >
+              <img
+                src={relatedProduct.images[0]}
+                alt={relatedProduct.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4 flex flex-col justify-between flex-1">
+                <div>
+                  <p className="font-bold mb-2">{relatedProduct.title}</p>
+                </div>
+                <button
+                  className="bg-green-500 text-white px-4 py-2 rounded mt-2 self-start transition duration-300 ease-in-out hover:bg-green-700"
+                  onClick={() => navigate(`/product/${relatedProduct.id}`)}
+                >
+                  See Product
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
