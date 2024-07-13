@@ -38,6 +38,9 @@ const Cart = ({ isOpen, toggleCart }) => {
   }
 
   const handleCheckout = () => {
+    console.log('Navigating to checkout...')
+    console.log('Cart Items:', cartItems)
+    console.log('Total:', calculateTotal())
     toggleCart(false)
     navigate('/checkout', { state: { cartItems, total: calculateTotal() } })
   }

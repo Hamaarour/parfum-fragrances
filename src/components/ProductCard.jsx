@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
-import { FaStar } from 'react-icons/fa'
+import { FaShoppingCart } from 'react-icons/fa'
 
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -46,7 +46,7 @@ const ProductCard = ({ product }) => {
     addToCart(product, selectedVolume, purchaseQuantity)
     toast.success(`${product.title} added to cart!`, {
       position: 'top-right',
-      autoClose: 3000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -60,7 +60,7 @@ const ProductCard = ({ product }) => {
       removeFromFavorite(product.id)
       toast.success(`${product.title} removed from favorites!`, {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -71,7 +71,7 @@ const ProductCard = ({ product }) => {
       addToFavorite(product)
       toast.success(`${product.title} added to favorites!`, {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -180,7 +180,7 @@ const ProductCard = ({ product }) => {
           Price: {price ? price.toFixed(2) : 'Select volume'} DH
         </p>
         <button
-          className={` text-white w-1/2 px-4 py-2 rounded transition duration-300 ease-in-out hover:shadow-md  ${
+          className={` text-white w-1/2 py-2 rounded transition duration-300 ease-in-out hover:shadow-md flex items-center justify-center  ${
             quantities[selectedVolume] === 0
               ? 'bg-gray-500 hover:bg-gray-700 cursor-not-allowed'
               : 'bg-green-500 hover:bg-green-700 '
@@ -188,6 +188,7 @@ const ProductCard = ({ product }) => {
           disabled={quantities[selectedVolume] === 0}
           onClick={handleAddToCart}
         >
+          <FaShoppingCart className="mr-2" />
           Add to Cart
         </button>
       </div>

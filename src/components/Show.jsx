@@ -4,7 +4,7 @@ import comImage from '../assets/parfum-show.png'
 
 const Show = () => {
   return (
-    <section className="w-full grid grid-cols-1 md:grid-cols-3 gap-0 p-5 md:px-28 py-20 ">
+    <section className="w-full grid grid-cols-1 md:grid-cols-3 gap-0 p-5 md:px-28 py-20 lg:px-44">
       <div
         key={0}
         className="bg-cover bg-center relative h-[450px]"

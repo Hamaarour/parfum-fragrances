@@ -65,7 +65,7 @@ const ProductPage = () => {
   return (
     <div className="bg-neutral">
       <Banner title="store" backgroundImage="/src/assets/store_banner_2.png" />
-      <div className="mx-[100px] p-4 mt-4">
+      <div className="mx-[100px] p-4 mt-4 lg:px-40">
         <div className="flex items-center justify-between mb-4">
           <SearchBar value={searchQuery} onChange={handleSearchChange} />
           <FilterDropdown onFilterChange={handleFilterChange} />

@@ -14,8 +14,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import PacPage from './pages/PacPage'
 import ProductDetail from './pages/ProductDetail.'
-import OrderConfirmation from './pages/OrderConfirmation'
 import CollectionDetail from './pages/CollectionDetail'
+import Checkout from './pages/Checkout'
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<ProductPage />} />
             <Route path="/product/:productId" element={<ProductDetail />} />
-            <Route path="/checkout" element={<OrderConfirmation />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route

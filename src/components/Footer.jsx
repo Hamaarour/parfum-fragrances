@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <footer className="font-sentient overflow-x-hidden w-full bg-green-500 text-white flex flex-col md:p-10 gap-6">
-      <div className="flex flex-col gap-8 md:flex-row md:justify-between md:items-start md:gap-4">
+      <div className="flex flex-col gap-8 md:flex-row md:justify-between md:items-start md:gap-4 lg:px-44">
         <div className="w-full md:w-1/3 leading-8">
           <div className="flex items-center justify-center md:space-x-2 md:justify-start">
             <FaPhone />

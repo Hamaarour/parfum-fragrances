@@ -7,7 +7,7 @@ import rightImage from '../assets/spreak.png'
 
 const Collections = () => {
   return (
-    <div className="w-full px-4  md:px-28 py-14 flex flex-col md:flex-row md:items-center justify-center gap-10">
+    <div className="w-full px-4  md:px-28 py-14 flex flex-col md:flex-row md:items-center justify-center gap-10 lg:px-44">
       <div className="w-full md:w-1/3 flex items-center flex-col md:items-end gap-16">
         <h1
           className="uppercase font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 text-green-700 font-sentient text-center md:text-left relative"

@@ -8,11 +8,18 @@ import brand6 from '../assets/brands/Prada.png'
 import brand7 from '../assets/brands/YvesSaintLaurent.png'
 
 export const NAV_LINKS = [
-  { title: 'Shop', link: '/shop' },
+  { title: 'Store', link: '/shop' },
   { title: 'Collection', link: '/collection' },
   { logo: true, src: '../assets/react.svg', alt: 'Logo', link: '/' },
   { title: 'About', link: '/about' },
   { title: 'Contact', link: '/contact' },
+]
+
+export const STATS = [
+  { id: 1, name: 'Perfumes Available', value: '500+' },
+  { id: 2, name: 'Happy Customers', value: '10,000+' },
+  { id: 3, name: 'Countries Shipped To', value: '50+' },
+  { id: 4, name: 'Orders Processed', value: '20,000+' },
 ]
 
 // Array of brand logos
@@ -336,6 +343,16 @@ export const COLLECTIONS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/KQrvA3G4KTvF2r41i9l8UQ2L5YWJ40RkFKbhRhMO_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
     ],
+    description:
+      'Experience the luxurious essence of Jean Paul Gaultier with this exclusive Pack Trio. Featuring three iconic fragrances, this set is perfect for any occasion.',
+    brand: 'Jean Paul Gaultier',
+    category: 'Fragrance',
+    rating: 4.8,
+    reviews: [
+      { user: 'Alice', comment: 'Amazing scents, long-lasting!', rating: 5 },
+      { user: 'Bob', comment: 'Great value for the price.', rating: 4 },
+    ],
+    availability: 'In stock',
   },
   {
     id: 2,
@@ -345,6 +362,16 @@ export const COLLECTIONS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/sTHA17E4PRzYao6VUnn7sw3agffAbIbK6lZClyRU_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
     ],
+    description:
+      'Experience the luxurious essence of Jean Paul Gaultier with this exclusive Pack Trio. Featuring three iconic fragrances, this set is perfect for any occasion.',
+    brand: 'Jean Paul Gaultier',
+    category: 'Fragrance',
+    rating: 4.8,
+    reviews: [
+      { user: 'Alice', comment: 'Amazing scents, long-lasting!', rating: 5 },
+      { user: 'Bob', comment: 'Great value for the price.', rating: 4 },
+    ],
+    availability: 'In stock',
   },
   {
     id: 3,
@@ -354,6 +381,16 @@ export const COLLECTIONS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/iRM1PHwZCvJkSEh8ZZ0NLgt9FRMIhOUg44dJusIl_lg.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
     ],
+    description:
+      'Experience the luxurious essence of Jean Paul Gaultier with this exclusive Pack Trio. Featuring three iconic fragrances, this set is perfect for any occasion.',
+    brand: 'Jean Paul Gaultier',
+    category: 'Fragrance',
+    rating: 5,
+    reviews: [
+      { user: 'Alice', comment: 'Amazing scents, long-lasting!', rating: 5 },
+      { user: 'Bob', comment: 'Great value for the price.', rating: 4 },
+    ],
+    availability: 'In stock',
   },
   {
     id: 4,
@@ -363,6 +400,16 @@ export const COLLECTIONS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/Q5iNWyReEZV2CbiQtoaFN367Jkz1EjXy6LRL8DYg_lg.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
     ],
+    description:
+      'Experience the luxurious essence of Jean Paul Gaultier with this exclusive Pack Trio. Featuring three iconic fragrances, this set is perfect for any occasion.',
+    brand: 'Jean Paul Gaultier',
+    category: 'Fragrance',
+    rating: 5,
+    reviews: [
+      { user: 'Alice', comment: 'Amazing scents, long-lasting!', rating: 5 },
+      { user: 'Bob', comment: 'Great value for the price.', rating: 4 },
+    ],
+    availability: 'In stock',
   },
   {
     id: 5,
@@ -372,6 +419,17 @@ export const COLLECTIONS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/EJUf45HAWXofpB3o4fxPwaxueqdoxLAwpPnCq3lG_lg.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
     ],
+    description:
+      'Experience the luxurious essence of Jean Paul Gaultier with this exclusive Pack Trio. Featuring three iconic fragrances, this set is perfect for any occasion.',
+    brand: 'Jean Paul Gaultier',
+    category: 'Fragrance',
+    rating: 5,
+    reviews: [
+      { user: 'Alice', comment: 'Amazing scents, long-lasting!', rating: 5 },
+      { user: 'Bob', comment: 'Great value for the price.', rating: 4 },
+    ],
+
+    availability: 'Out of stock',
   },
   {
     id: 6,
@@ -381,6 +439,16 @@ export const COLLECTIONS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/w22VgPPOr1JSYNkCTGUbaAeOEXgKBqnunPBizGr0_lg.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
     ],
+    description:
+      'Experience the luxurious essence of Jean Paul Gaultier with this exclusive Pack Trio. Featuring three iconic fragrances, this set is perfect for any occasion.',
+    brand: 'Jean Paul Gaultier',
+    category: 'Fragrance',
+    rating: 4.8,
+    reviews: [
+      { user: 'Alice', comment: 'Amazing scents, long-lasting!', rating: 5 },
+      { user: 'Bob', comment: 'Great value for the price.', rating: 4 },
+    ],
+    availability: 'Out of stock',
   },
   {
     id: 7,
@@ -390,6 +458,16 @@ export const COLLECTIONS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/AGk9cOHO2g2ao6cEkefaGnldnYbF06CnHL2tkfy6_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
     ],
+    description:
+      'Experience the luxurious essence of Jean Paul Gaultier with this exclusive Pack Trio. Featuring three iconic fragrances, this set is perfect for any occasion.',
+    brand: 'Jean Paul Gaultier',
+    category: 'Fragrance',
+    rating: 4.8,
+    reviews: [
+      { user: 'Alice', comment: 'Amazing scents, long-lasting!', rating: 5 },
+      { user: 'Bob', comment: 'Great value for the price.', rating: 4 },
+    ],
+    availability: 'In stock',
   },
   {
     id: 8,
@@ -399,5 +477,33 @@ export const COLLECTIONS = [
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/8xih57dOvotYolHCCkUpuerJkbKtz4EDYvmsFAgK_md.png',
       'https://cdn.youcan.shop/stores/89d8685ac564a7fae4854ec4289572d6/products/oRvL9ASnhBYjsTLAbxfCSlSX2cQ8PNiJixGTbbWO_lg.png',
     ],
+    description:
+      'Experience the luxurious essence of Jean Paul Gaultier with this exclusive Pack Trio. Featuring three iconic fragrances, this set is perfect for any occasion.',
+    brand: 'Jean Paul Gaultier',
+    category: 'Fragrance',
+    rating: 4.8,
+    reviews: [
+      { user: 'Alice', comment: 'Amazing scents, long-lasting!', rating: 5 },
+      { user: 'Bob', comment: 'Great value for the price.', rating: 4 },
+    ],
+    availability: 'Out of stock',
+  },
+]
+
+export const DISCOUNTS = [
+  {
+    title: 'SUM2024',
+    description: 'Get up to 50% off on selected items',
+    percent: 50,
+  },
+  {
+    title: 'SUM20',
+    description: 'Get up to 50% off on selected items',
+    percent: 20,
+  },
+  {
+    title: 'SUM24',
+    description: 'Get up to 50% off on selected items',
+    percent: 10,
   },
 ]

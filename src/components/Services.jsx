@@ -6,7 +6,7 @@ import CITRUS from '../assets/citrus.png'
 
 const Services = () => {
   return (
-    <section className="flex flex-col items-center justify-center p-5 md:px-28 py-14">
+    <section className="flex flex-col items-center justify-center p-5 md:px-28 py-14 lg:px-44">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="flex flex-col items-center text-center">
           <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center">

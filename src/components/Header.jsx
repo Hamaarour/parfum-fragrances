@@ -69,7 +69,7 @@ const Header = () => {
         </ul>
         <div className="flex items-center space-x-4 ">
           <div
-            className="relative flex items-center border-2 border-white rounded-sm p-2 cursor-pointer"
+            className="relative flex items-center  rounded-sm p-2 cursor-pointer border-[1px] text-black bg-gray-100 hover:bg-grey-400 transition duration-300 ease-in-out"
             onClick={() => toggleCart(!isCartOpen)}
           >
             <FaShoppingCart className="text-xl cursor-pointer" />
@@ -81,11 +81,11 @@ const Header = () => {
             )}
             {isCartOpen && <Cart isOpen={isCartOpen} toggleCart={toggleCart} />}
           </div>
-          <div className="relative">
+          <div className="relative ">
             <FaHeart
-              className="text-xl cursor-pointer"
+              className="text-xl cursor-pointer pr-2 "
               onClick={() => toggleFavorite(!isFavoriteOpen)}
-              size={27}
+              size={26}
             />
             {favorites.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-black rounded-full px-2 text-xs">

@@ -134,7 +134,7 @@ const ProductDetail = () => {
         </div>
         <div className="w-full md:w-1/2">
           <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
-          <p className="text-2xl font-semibold text-red-600 mb-4">
+          <p className="text-2xl font-semibold text-[#bf5700] mb-4">
             {price.toFixed(2)} DH
           </p>
           <div className="mb-8 flex flex-col gap-2">
