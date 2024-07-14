@@ -20,7 +20,7 @@ const PacPage = () => {
     <div className="w-full">
       <Banner title="" backgroundImage="/src/assets/pac_banner.png" />
       <div className="container mx-auto px-8 pb-20 lg:px-40">
-        <h1 className="text-5xl font-bold text-center m-12 uppercase">
+        <h1 className=" text-2xl font-bold text-center m-12 uppercase md:text-5xl">
           Our Collections
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-8">

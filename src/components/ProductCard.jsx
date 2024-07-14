@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { FaShoppingCart } from 'react-icons/fa'
-
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -95,7 +94,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="border p-4 relative rounded-lg shadow-md transform transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
       <div
-        className="relative h-64 cursor-pointer lg:h-72 xl:h-80 2xl:h-96 rounded-lg overflow-hidden"
+        className="relative h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 cursor-pointer rounded-lg overflow-hidden"
         onDoubleClick={handleToggleFavorite}
       >
         <div
@@ -135,15 +134,14 @@ const ProductCard = ({ product }) => {
         )}
         {product.bestSelling && quantities[selectedVolume] !== 0 && (
           <div className="absolute top-2 left-2 bg-green-500 flex gap-1 items-center text-white text-xs font-bold px-2 py-1 rounded">
-            {/* <FaStar className="text-yellow-500" /> */}
             Best Selling
           </div>
         )}
       </div>
-      <h2 className="font-sentient text-md font-bold mb-4 mt-4 min-h-10">
+      <h2 className="font-sentient text-md font-bold mb-4 mt-4 min-h-10 text-center md:text-left">
         {product.title}
       </h2>
-      <div className="flex gap-2 mb-2">
+      <div className="flex gap-2 mb-2 justify-center md:justify-start">
         {Object.keys(product.prices).map((volume) => (
           <button
             key={volume}
@@ -180,10 +178,10 @@ const ProductCard = ({ product }) => {
           Price: {price ? price.toFixed(2) : 'Select volume'} DH
         </p>
         <button
-          className={` text-white w-1/2 py-2 rounded transition duration-300 ease-in-out hover:shadow-md flex items-center justify-center  ${
+          className={`text-white w-1/2 py-2 rounded transition duration-300 ease-in-out hover:shadow-md flex items-center justify-center ${
             quantities[selectedVolume] === 0
               ? 'bg-gray-500 hover:bg-gray-700 cursor-not-allowed'
-              : 'bg-green-500 hover:bg-green-700 '
+              : 'bg-green-500 hover:bg-green-700'
           }`}
           disabled={quantities[selectedVolume] === 0}
           onClick={handleAddToCart}

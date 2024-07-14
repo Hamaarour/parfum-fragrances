@@ -129,7 +129,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       id="discount-code-desktop"
-                      {...register('discountCode', { required: false })}
+                      {...register('discountCode')}
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                     />
                     <button
