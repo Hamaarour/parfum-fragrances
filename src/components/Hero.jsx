@@ -1,32 +1,76 @@
-import React from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import { PerfumeModel } from './PerfumeModel'
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 import Circle from './Circle'
 
 const Hero = () => {
+  const fragrancesRef = useRef(null)
+  const thatCaptivateRef = useRef(null)
+  const yourSensesRef = useRef(null)
+  const taglineRef = useRef(null)
+
+  useEffect(() => {
+    // GSAP animations for the text
+    gsap.fromTo(
+      fragrancesRef.current,
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1.5, ease: 'power3.out', delay: 0.5 }
+    )
+
+    gsap.fromTo(
+      thatCaptivateRef.current,
+      { opacity: 0, x: -100 },
+      { opacity: 1, x: 0, duration: 1.5, ease: 'power3.out', delay: 1 }
+    )
+
+    gsap.fromTo(
+      yourSensesRef.current,
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1.5, ease: 'power3.out', delay: 1.5 }
+    )
+
+    gsap.fromTo(
+      taglineRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.5, ease: 'power3.out', delay: 2 }
+    )
+  }, [])
+
   return (
-    <section className="relative h-screen w-full  bg-color-gradient font-sentient font-semibold">
-      <div className="absolute top-0 left-0 w-full h-full z-10 ">
-        <Canvas className="fixed">
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[0, 10, 5]} intensity={1} />
-          <OrbitControls enableZoom={false} />
-          <PerfumeModel />
-        </Canvas>
+    <section
+      className="relative top-0 right-0 h-screen w-full bg-banner-bg bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center font-sentient font-semibold"
+      // style={{ backgroundImage: "url('/assets/background.png')" }}
+    >
+      {/* White Overlay */}
+      <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
+
+      {/* Content on Top */}
+      <div className="relative z-10 text-7xl md:text-8xl lg:text-9xl text-white tracking-wide text-center">
+        <span ref={fragrancesRef} className="block">
+          FRAGRANCES
+        </span>
       </div>
-      <div className="absolute top-1/4 left-0 w-full h-full flex flex-col justify-center items-center z-20">
-        <div className="relative text-center text-8xl text-white">
-          <span className="block">FRAGRANCES</span>
+
+      {/* Subtext with GSAP Animation */}
+      <div className="relative z-10 flex flex-col justify-center items-center mt-6 text-center">
+        <div className="text-5xl md:text-6xl lg:text-7xl text-white">
+          <span ref={thatCaptivateRef} className="block">
+            THAT CAPTIVATE
+          </span>
+          <span ref={yourSensesRef} className="block">
+            YOUR SENSES
+          </span>
         </div>
+
+        {/* Tagline with GSAP Animation */}
+        <p className="text-lg md:text-xl text-gray-200 mt-5" ref={taglineRef}>
+          Pure, Honest & Unforgettable
+        </p>
       </div>
-      <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-30">
-        <div className="relative text-center text-4xl md:text-6xl lg:text-8xl text-white">
-          <span className="block">SENSES WITH</span>
-          <span className="block">UNFORGETTABLE</span>
-        </div>
+
+      {/* Circle Component with Bounce Animation */}
+      <div className="relative z-10 mt-10 animate-bounceSlow">
+        <Circle />
       </div>
-      <Circle />
     </section>
   )
 }

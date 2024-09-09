@@ -7,7 +7,7 @@ const Show = () => {
     <section className="w-full grid grid-cols-1 md:grid-cols-3 gap-0 p-5 md:px-28 py-20 lg:px-44">
       <div
         key={0}
-        className="bg-cover bg-center relative h-[450px]"
+        className="bg-cover bg-center relative min-h-[500px]"
         style={{ backgroundImage: `url(${SHOW_IMAGES[0].src})` }}
       >
         <div className="absolute inset-0 bg-cover bg-center object-contain "></div>
@@ -22,7 +22,7 @@ const Show = () => {
       </div>
       <div
         key={2}
-        className="bg-cover bg-center relative"
+        className="bg-cover bg-center relative min-h-[500px]"
         style={{ backgroundImage: `url(${SHOW_IMAGES[2].src})` }}
       >
         <div className="absolute inset-0 bg-cover bg-center object-contain"></div>

@@ -10,7 +10,12 @@ import brand7 from '../assets/brands/YvesSaintLaurent.png'
 export const NAV_LINKS = [
   { title: 'Store', link: '/shop' },
   { title: 'Collection', link: '/collection' },
-  { logo: true, src: '../assets/react.svg', alt: 'Logo', link: '/' },
+  {
+    logo: true,
+    src: '../assets/logo/logo_circle_white.png',
+    alt: 'Logo',
+    link: '/',
+  },
   { title: 'About', link: '/about' },
   { title: 'Contact', link: '/contact' },
 ]
