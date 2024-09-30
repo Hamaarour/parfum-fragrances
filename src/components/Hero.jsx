@@ -37,22 +37,22 @@ const Hero = () => {
 
   return (
     <section
-      className="relative top-0 right-0 h-screen w-full bg-banner-bg bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center font-sentient font-semibold"
+      className="overflow-x-hidden  relative top-0 right-0 h-screen w-full bg-banner-bg bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center font-sentient font-semibold"
       // style={{ backgroundImage: "url('/assets/background.png')" }}
     >
       {/* White Overlay */}
       <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
 
       {/* Content on Top */}
-      <div className="relative z-10 text-7xl md:text-8xl lg:text-9xl text-white tracking-wide text-center">
+      <div className="relative z-10 text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-white tracking-wide text-center px-4">
         <span ref={fragrancesRef} className="block">
           FRAGRANCES
         </span>
       </div>
 
       {/* Subtext with GSAP Animation */}
-      <div className="relative z-10 flex flex-col justify-center items-center mt-6 text-center">
-        <div className="text-5xl md:text-6xl lg:text-7xl text-white">
+      <div className="relative z-10 flex flex-col justify-center items-center mt-4 sm:mt-6 text-center px-4">
+        <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white">
           <span ref={thatCaptivateRef} className="block">
             THAT CAPTIVATE
           </span>
@@ -62,13 +62,16 @@ const Hero = () => {
         </div>
 
         {/* Tagline with GSAP Animation */}
-        <p className="text-lg md:text-xl text-gray-200 mt-5" ref={taglineRef}>
+        <p
+          className="text-base sm:text-lg md:text-xl text-gray-200 mt-3 sm:mt-5"
+          ref={taglineRef}
+        >
           Pure, Honest & Unforgettable
         </p>
       </div>
 
       {/* Circle Component with Bounce Animation */}
-      <div className="relative z-10 mt-10 animate-bounceSlow">
+      <div className="relative z-10 mt-8 sm:mt-10 animate-bounceSlow">
         <Circle />
       </div>
     </section>
